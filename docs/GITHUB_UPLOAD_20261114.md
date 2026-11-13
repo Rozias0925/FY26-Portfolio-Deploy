@@ -30,3 +30,11 @@
 本次操作只保存版本，不啟動 Docker、API 或 Streamlit，也不新增自動執行的 CI。Repository 保持私人，GitHub Pages、公開可見性及付費託管均未設定。
 
 作者尚未選定本專題的開源授權；目前保留作者權利，第三方元件依各自條款辦理。Repository 中列出依賴安裝方式，並未附帶虛擬環境、第三方套件或容器映像。授權審查清單見 [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)。
+
+## 後續 GitHub Pages 入口修正
+
+後續檢查時，Repository 已顯示為 `public`，GitHub Pages 根網址也已提供頁面。根目錄原先只有 README，Pages 因此把英文 README 渲染成首頁；實際網站仍完整位於 `web/index.html`。
+
+修正加入根目錄 `index.html` 與 `.nojekyll`，讓 Pages 根網址開啟既有網站，並保留網址中的查詢參數及章節錨點。README 同步加入網站連結。`web/` 的 HTML、CSS、JavaScript、圖片與保存證據均沿用原版本。
+
+網站入口為 `https://rozias0925.github.io/FY26-Portfolio-Deploy/`。本次範圍為既有公開靜態網站的入口修正；API、Streamlit、Docker、付費服務及原始 Factor GCN 整合維持各自原狀。上方私人設定的敘述記錄首次上傳當時的狀態。

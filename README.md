@@ -2,6 +2,8 @@
 
 This project implements a local model-serving and deployment workflow around a synthetic graph-based portfolio simulation. It combines a FastAPI service, a Streamlit dashboard, Docker containers, and an interactive engineering guide. This repository includes the executable synthetic-demo source code; the original Factor GCN research code, trained weights, and financial datasets are not included.
 
+**[Read the interactive project guide](https://rozias0925.github.io/FY26-Portfolio-Deploy/)**
+
 ## Project purpose
 
 The project develops the engineering layer around a computational model: input validation, service boundaries, result presentation, container configuration, and reproducible verification. It accompanies my [Factor GCN research project](https://rozias0925.github.io/FY26-Graph-Portfolio/) while using a separate, transparent synthetic pipeline for the implementation.
@@ -112,7 +114,7 @@ docs/             Architecture, reproduction, limitations, and selected evidence
 
 The project demonstrates local software engineering with synthetic data. Its evaluation assumes the same target weights each day and omits transaction costs, liquidity, market impact, and trade execution. Synthetic metrics establish the behaviour of the example, rather than financial forecasting performance.
 
-API and dashboard access is configured for local use. Compose binds host ports to `127.0.0.1`; its project bridge permits outbound container connections. Public backend hosting and GitHub Pages are separate deployment decisions.
+API and dashboard access is configured for local use. Compose binds host ports to `127.0.0.1`; its project bridge permits outbound container connections. The GitHub Pages website serves the static guide, saved execution records, and browser illustration. The Python services run locally.
 
 The author has not selected an open-source license. Third-party dependencies remain subject to their respective terms; see the [dependency and licensing review](docs/THIRD_PARTY_LICENSES.md). The example is for educational and technical demonstration, with synthetic data and no investment-advice service.
 

@@ -12,7 +12,7 @@
     "Dockerfile.api": "ea4d3b2ce3ba7afbe0ff2cecf0a3cbbc3229a0207dd2d802f46e8e8f5bd79650",
     "Dockerfile.ui": "279509952e12296f795acfe7d74952a7e24287eea1d6a55fc8fd19d70c82bffa",
     "pyproject.toml": "c7a6e18bbfdeab655ccd04cb283c6597b8d214893fae3af4c65bcb3b851e3055",
-    "README.md": "9edb462a9b99c01107f16af5b1371d063177c46b72055da03c441a021d03e4fc",
+    "README.md": "e1ef072945ff7c1cce81078160837543f90a7bdc067d2e2adf9fd56c11aeb893",
     "requirements-api.txt": "26415b3fa24cc26b9c0f1a43b38be459be2794b297fff3d40491e72347045060",
     "requirements-ui.txt": "fd03367e28aaac711b7dcbfeda492fafd82f3d6a0180eb03e9b88e5ee3a36a41",
     "requirements.in": "9d97feaa571f8499dce8f9aeb20b40d00a1595aeb177337685b582e1df4119d6",
@@ -27,7 +27,7 @@
     "docs/AUDIT.md": "27aa34f936bb0f2008620caf6b188556a3ba973e4b45c5073b23ebd2e5406edc",
     "docs/DATA_POLICY.md": "d00bf2af7a1ad5c72792b93230975033545fcf6305b8aa444b93846588f53560",
     "docs/DOCKER_SETUP_REVIEW.md": "697220bde780780050b6035c429f8a121822f5bf2e30985a9ec2c3f035335982",
-    "docs/GITHUB_UPLOAD_20261114.md": "b7c956761f4ba4b4bb3e6fdf82038dcf2ecac5ae1ae51320a49c9e4332b0cd2f",
+    "docs/GITHUB_UPLOAD_20261114.md": "f4cf602695ab4505ef80f74a8239d00e4b2c7c72e04986e1c433c6aa91cd8920",
     "docs/glossary.md": "1462a17302fd4cb7a8b22c17394a980e523eab0736454b963aa40445467d4a6c",
     "docs/LIMITATIONS.md": "a566bf9f08184c5686c202819b92797524ec9555de767a9e47b4ee2d6b35941b",
     "docs/LOCAL_REPRODUCTION.md": "69745a9e900621180372bba7e11810aab36f9457e7e3b473353739135b461585",
@@ -120,6 +120,14 @@
     "web/assets/implementation/scripts__verify_docker.py.txt": "3894decd287e043727b4f2a3171199d91221eeb97ab363f164baadc85f215ed3",
     "web/assets/implementation/tests__test_api.py.txt": "71b34227ce90410d2f769a02398313fb9703aa0f99c6f6f1b98540252172e14d",
     "web/assets/implementation/tests__test_demo_model.py.txt": "0fc9c8917f086872f4ea02b1902feb811af228f377db102ddb31992bcf70d463",
-    "web/assets/implementation/tests__test_integration.py.txt": "e698f1949938dc1f6471d17cc584880bea85f4e789944660833c5bf3869bc0c6"
+    "web/assets/implementation/tests__test_integration.py.txt": "e698f1949938dc1f6471d17cc584880bea85f4e789944660833c5bf3869bc0c6",
+    "index.html": "570e2a838ffbaab7726e801329e8d251fb5b06adf231983516609741fbae7b73",
+    ".nojekyll": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  "pages_entry": {
+    "root": "index.html",
+    "target": "web/index.html",
+    "static_serving": ".nojekyll",
+    "original_web_artifacts_unchanged": true
   }
 }
