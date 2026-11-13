@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-11-13T21:39:50.395017+08:00",
+  "version": "1.1.2",
+  "source_sha256": "f31243cec641ac9c951582c26047701a25e2f4f3d05488f092325cfd999c4fb7",
+  "python": "3.12.14",
+  "checks": [
+    {
+      "name": "pytest",
+      "status": "passed",
+      "detail": "........................................................................ [ 51%]\n.....................................................................    [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  <project>\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n141 passed, 1 warning in 21.53s",
+      "exit_code": 0,
+      "command": "python -m pytest -q --basetemp .tmp\\verify-7b_iia_9\\pytest"
+    },
+    {
+      "name": "pip-check",
+      "status": "passed",
+      "detail": "No broken requirements found. (dependency consistency; not a CVE audit)",
+      "exit_code": 0,
+      "command": "python -m pip check"
+    },
+    {
+      "name": "javascript-app",
+      "status": "passed",
+      "detail": "",
+      "exit_code": 0,
+      "command": "node --check web\\scripts\\app.js"
+    },
+    {
+      "name": "javascript-content",
+      "status": "passed",
+      "detail": "",
+      "exit_code": 0,
+      "command": "node --check web\\scripts\\content.js"
+    },
+    {
+      "name": "javascript-implementation",
+      "status": "passed",
+      "detail": "",
+      "exit_code": 0,
+      "command": "node --check web\\scripts\\implementation.js"
+    },
+    {
+      "name": "website-contract",
+      "status": "passed",
+      "detail": "user research and profile websites are externally linked\nPASS no browser network data APIs\nPASS no browser persistence, tracking or cookie APIs\nPASS no remote navigation or dynamic script injection in app\nPASS accessible shell: language, skip link, landmarks and compact navigation\nPASS homepage includes exact bilingual educational notices\nPASS playground explicitly distinguishes browser illustration from API\nPASS playground offers three scenarios and keyboard-operable JSON tabs\nPASS responsive and reduced-motion styles exist\nPASS static evidence marks pending records and dates execution snapshots\nPASS saved Python request/response match real HTTP record\nPASS saved proof preserves synthetic scope and API identity\nPASS selected source snapshots match the current source hashes\nPASS static screenshots and complete JSON files exist\nPASS published Docker receipt matches independently saved execution and scope\nPASS Docker gallery preserves original screenshots and excludes private runtime logs\nPASS implementation and reproduction routes are reachable from directory\nPASS reproduction includes startup, test, shutdown and missing-Docker scope\nPASS reproduction lists Node.js and distinguishes skipped website verification\nPASS law references use the two official article pages\n\nWeb checks: 32 passed, 0 failed. Chapters: 9; glossary: 58; inline glossary references: 45.\nScope: offline structural/content checks. Browser behavior, layout and true API execution require separate verification.",
+      "exit_code": 0,
+      "command": "node scripts/check_web.mjs"
+    },
+    {
+      "name": "Docker Compose runtime",
+      "status": "not_run",
+      "detail": "Run scripts/verify_docker.ps1 separately; not covered by this command."
+    }
+  ],
+  "limitations": [
+    "Synthetic graph demonstration; original Factor GCN NOT INTEGRATED.",
+    "Docker runtime not verified by this script.",
+    "No public deployment or repository created."
+  ]
+}

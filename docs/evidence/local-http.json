@@ -1,0 +1,2176 @@
+{
+  "captured_at": "2026-10-19T15:56:00.971219+08:00",
+  "transport": "real HTTP to 127.0.0.1 only",
+  "responses": {
+    "health": {
+      "status": 200,
+      "body": {
+        "data_mode": "synthetic",
+        "investment_advice": false,
+        "status": "ok",
+        "version": "1.0.0"
+      }
+    },
+    "model-info": {
+      "status": 200,
+      "body": {
+        "data_mode": "synthetic",
+        "investment_advice": false,
+        "model_id": "demo_synthetic_graph_model",
+        "model_version": "1.0.0",
+        "original_factor_gcn": "NOT INTEGRATED",
+        "trained_model": false,
+        "method": "Fixed-rule single-step graph propagation on synthetic calibration observations",
+        "formula": "C=corr(R_train); A_ij=abs(C_ij) if i!=j and abs(C_ij)>=0.25 else 0; P=row_normalize(A+I); s=mean(R_train)/sample_std(R_train)*sqrt(252); z=0.5*s+0.5*P@s; q=softmax((z-penalty*vol/mean(vol))/temperature); w=(1-concentration)/6+concentration*q",
+        "pipeline": [
+          "synthetic generation",
+          "past-only feature calibration",
+          "past-only graph construction",
+          "fixed-rule inference",
+          "held-out evaluation",
+          "typed JSON response"
+        ],
+        "split": {
+          "training_days": 120,
+          "evaluation_days": 60,
+          "training_window": [
+            0,
+            119
+          ],
+          "evaluation_window": [
+            120,
+            179
+          ]
+        },
+        "metric_definitions": {
+          "cumulative_return": "prod(1 + held-out daily portfolio return) - 1; decimal fraction",
+          "annualized_volatility": "sample_std(held-out daily portfolio returns) * sqrt(252); decimal fraction",
+          "sharpe_ratio": "mean(held-out daily portfolio returns) / sample_std * sqrt(252); risk-free rate 0; 0 when standard deviation is 0",
+          "max_drawdown": "max(1 - equity / running_max(equity)); nonnegative decimal fraction; includes initial equity 1",
+          "graph_node_training_volatility": "sample daily standard deviation over calibration days 0..119; decimal fraction",
+          "graph_node_training_signal": "calibration mean / sample daily standard deviation * sqrt(252)"
+        },
+        "limitations": [
+          "Fictional data only; no real securities or investment advice.",
+          "No original Factor GCN code, weights, research data, or original results are integrated.",
+          "Fixed-rule graph propagation is not a trained GCN; no learned model artifact exists.",
+          "Risk labels change fixed formula parameters; realized volatility order is not guaranteed.",
+          "Only 60 held-out synthetic days; annualization is illustrative and is not a forecast.",
+          "Constant target weights are applied each day (implicit daily weight reset); trading/rebalancing execution, turnover, fees, and costs are not modeled.",
+          "Repeatability assumes the same source and dependency versions; cross-platform bitwise identity is not promised."
+        ]
+      }
+    },
+    "scenarios": {
+      "status": 200,
+      "body": {
+        "data_mode": "synthetic",
+        "investment_advice": false,
+        "scenarios": [
+          {
+            "id": "scenario_a",
+            "label": "Scenario A — 平穩群聚",
+            "description": "虛構資產共享兩個穩定因子；用來觀察圖的群聚。"
+          },
+          {
+            "id": "scenario_b",
+            "label": "Scenario B — 情境轉換",
+            "description": "評估期的合成波動與趨勢改變；展示校準後遇到分布變化。"
+          },
+          {
+            "id": "scenario_c",
+            "label": "Scenario C — 分散連結",
+            "description": "虛構資產的獨立擾動較大；展示較弱的圖連結。"
+          }
+        ],
+        "allowed_parameters": {
+          "seed": {
+            "minimum": 0,
+            "maximum": 2147483647,
+            "default": 42
+          },
+          "risk_level": [
+            "low",
+            "balanced",
+            "high"
+          ]
+        }
+      }
+    },
+    "openapi.json": {
+      "status": 200,
+      "body": {
+        "openapi": "3.1.0",
+        "info": {
+          "title": "Synthetic Graph Portfolio Engineering Demo",
+          "description": "Local educational API using fictional observations only. No real securities, investment advice, trained Factor GCN, or original research assets. Use 127.0.0.1 host binding; public deployment requires human review.",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/health": {
+            "get": {
+              "tags": [
+                "Service"
+              ],
+              "summary": "Health",
+              "operationId": "health_health_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/HealthResponse"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/model-info": {
+            "get": {
+              "tags": [
+                "Education"
+              ],
+              "summary": "Model Info",
+              "operationId": "model_info_model_info_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/ModelInfoResponse"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/scenarios": {
+            "get": {
+              "tags": [
+                "Education"
+              ],
+              "summary": "Scenarios",
+              "operationId": "scenarios_scenarios_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/ScenariosResponse"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/simulate": {
+            "post": {
+              "tags": [
+                "Synthetic Demo"
+              ],
+              "summary": "Simulate Route",
+              "description": "Compute a fictional graph example. Accepts only three bounded parameters.",
+              "operationId": "simulate_route_simulate_post",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/SimulationRequest"
+                    }
+                  }
+                },
+                "required": true
+              },
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/SimulationResponse"
+                      }
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Validation Error",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/HTTPValidationError"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {
+            "Allocation": {
+              "properties": {
+                "asset_id": {
+                  "type": "string",
+                  "enum": [
+                    "SIM-01",
+                    "SIM-02",
+                    "SIM-03",
+                    "SIM-04",
+                    "SIM-05",
+                    "SIM-06"
+                  ],
+                  "title": "Asset Id"
+                },
+                "label": {
+                  "type": "string",
+                  "title": "Label"
+                },
+                "weight": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Weight"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "asset_id",
+                "label",
+                "weight"
+              ],
+              "title": "Allocation"
+            },
+            "AllowedParameters": {
+              "properties": {
+                "seed": {
+                  "$ref": "#/components/schemas/SeedBounds"
+                },
+                "risk_level": {
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "low",
+                      "balanced",
+                      "high"
+                    ]
+                  },
+                  "type": "array",
+                  "title": "Risk Level"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "seed",
+                "risk_level"
+              ],
+              "title": "AllowedParameters"
+            },
+            "DataSplit": {
+              "properties": {
+                "training_days": {
+                  "type": "integer",
+                  "const": 120,
+                  "title": "Training Days"
+                },
+                "evaluation_days": {
+                  "type": "integer",
+                  "const": 60,
+                  "title": "Evaluation Days"
+                },
+                "training_window": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array",
+                  "title": "Training Window"
+                },
+                "evaluation_window": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array",
+                  "title": "Evaluation Window"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "training_days",
+                "evaluation_days",
+                "training_window",
+                "evaluation_window"
+              ],
+              "title": "DataSplit"
+            },
+            "EquityPoint": {
+              "properties": {
+                "day": {
+                  "type": "integer",
+                  "maximum": 60.0,
+                  "minimum": 0.0,
+                  "title": "Day"
+                },
+                "equity": {
+                  "type": "number",
+                  "exclusiveMinimum": 0.0,
+                  "title": "Equity"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "day",
+                "equity"
+              ],
+              "title": "EquityPoint"
+            },
+            "Explainability": {
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "title": "Method"
+                },
+                "formula": {
+                  "type": "string",
+                  "title": "Formula"
+                },
+                "risk_parameters": {
+                  "$ref": "#/components/schemas/RiskParameters"
+                },
+                "features_used": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array",
+                  "title": "Features Used"
+                },
+                "calibration": {
+                  "type": "string",
+                  "title": "Calibration"
+                },
+                "evaluation": {
+                  "type": "string",
+                  "title": "Evaluation"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "method",
+                "formula",
+                "risk_parameters",
+                "features_used",
+                "calibration",
+                "evaluation"
+              ],
+              "title": "Explainability"
+            },
+            "Graph": {
+              "properties": {
+                "nodes": {
+                  "items": {
+                    "$ref": "#/components/schemas/GraphNode"
+                  },
+                  "type": "array",
+                  "maxItems": 6,
+                  "minItems": 6,
+                  "title": "Nodes"
+                },
+                "edges": {
+                  "items": {
+                    "$ref": "#/components/schemas/GraphEdge"
+                  },
+                  "type": "array",
+                  "maxItems": 15,
+                  "title": "Edges"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "nodes",
+                "edges"
+              ],
+              "title": "Graph"
+            },
+            "GraphEdge": {
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "enum": [
+                    "SIM-01",
+                    "SIM-02",
+                    "SIM-03",
+                    "SIM-04",
+                    "SIM-05",
+                    "SIM-06"
+                  ],
+                  "title": "Source"
+                },
+                "target": {
+                  "type": "string",
+                  "enum": [
+                    "SIM-01",
+                    "SIM-02",
+                    "SIM-03",
+                    "SIM-04",
+                    "SIM-05",
+                    "SIM-06"
+                  ],
+                  "title": "Target"
+                },
+                "correlation": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": -1.0,
+                  "title": "Correlation"
+                },
+                "weight": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Weight"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "source",
+                "target",
+                "correlation",
+                "weight"
+              ],
+              "title": "GraphEdge"
+            },
+            "GraphNode": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "enum": [
+                    "SIM-01",
+                    "SIM-02",
+                    "SIM-03",
+                    "SIM-04",
+                    "SIM-05",
+                    "SIM-06"
+                  ],
+                  "title": "Id"
+                },
+                "label": {
+                  "type": "string",
+                  "title": "Label"
+                },
+                "training_volatility": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "title": "Training Volatility"
+                },
+                "training_signal": {
+                  "type": "number",
+                  "title": "Training Signal"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "training_volatility",
+                "training_signal"
+              ],
+              "title": "GraphNode"
+            },
+            "HTTPValidationError": {
+              "properties": {
+                "detail": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  },
+                  "type": "array",
+                  "title": "Detail"
+                }
+              },
+              "type": "object",
+              "title": "HTTPValidationError"
+            },
+            "HealthResponse": {
+              "properties": {
+                "data_mode": {
+                  "type": "string",
+                  "const": "synthetic",
+                  "title": "Data Mode",
+                  "default": "synthetic"
+                },
+                "investment_advice": {
+                  "type": "boolean",
+                  "const": false,
+                  "title": "Investment Advice",
+                  "default": false
+                },
+                "status": {
+                  "type": "string",
+                  "const": "ok",
+                  "title": "Status"
+                },
+                "version": {
+                  "type": "string",
+                  "title": "Version"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "status",
+                "version"
+              ],
+              "title": "HealthResponse"
+            },
+            "Metadata": {
+              "properties": {
+                "training_days": {
+                  "type": "integer",
+                  "const": 120,
+                  "title": "Training Days"
+                },
+                "evaluation_days": {
+                  "type": "integer",
+                  "const": 60,
+                  "title": "Evaluation Days"
+                },
+                "training_window": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array",
+                  "title": "Training Window"
+                },
+                "evaluation_window": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array",
+                  "title": "Evaluation Window"
+                },
+                "data_mode": {
+                  "type": "string",
+                  "const": "synthetic",
+                  "title": "Data Mode",
+                  "default": "synthetic"
+                },
+                "investment_advice": {
+                  "type": "boolean",
+                  "const": false,
+                  "title": "Investment Advice",
+                  "default": false
+                },
+                "model_id": {
+                  "type": "string",
+                  "const": "demo_synthetic_graph_model",
+                  "title": "Model Id"
+                },
+                "model_version": {
+                  "type": "string",
+                  "title": "Model Version"
+                },
+                "original_factor_gcn": {
+                  "type": "string",
+                  "const": "NOT INTEGRATED",
+                  "title": "Original Factor Gcn"
+                },
+                "scenario_id": {
+                  "type": "string",
+                  "enum": [
+                    "scenario_a",
+                    "scenario_b",
+                    "scenario_c"
+                  ],
+                  "title": "Scenario Id"
+                },
+                "seed": {
+                  "type": "integer",
+                  "maximum": 2147483647.0,
+                  "minimum": 0.0,
+                  "title": "Seed"
+                },
+                "risk_level": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "balanced",
+                    "high"
+                  ],
+                  "title": "Risk Level"
+                },
+                "asset_count": {
+                  "type": "integer",
+                  "const": 6,
+                  "title": "Asset Count"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "training_days",
+                "evaluation_days",
+                "training_window",
+                "evaluation_window",
+                "model_id",
+                "model_version",
+                "original_factor_gcn",
+                "scenario_id",
+                "seed",
+                "risk_level",
+                "asset_count"
+              ],
+              "title": "Metadata"
+            },
+            "Metrics": {
+              "properties": {
+                "cumulative_return": {
+                  "type": "number",
+                  "exclusiveMinimum": -1.0,
+                  "title": "Cumulative Return"
+                },
+                "annualized_volatility": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "title": "Annualized Volatility"
+                },
+                "sharpe_ratio": {
+                  "type": "number",
+                  "title": "Sharpe Ratio"
+                },
+                "max_drawdown": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Max Drawdown"
+                },
+                "evaluation_days": {
+                  "type": "integer",
+                  "const": 60,
+                  "title": "Evaluation Days"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "cumulative_return",
+                "annualized_volatility",
+                "sharpe_ratio",
+                "max_drawdown",
+                "evaluation_days"
+              ],
+              "title": "Metrics"
+            },
+            "ModelInfoResponse": {
+              "properties": {
+                "data_mode": {
+                  "type": "string",
+                  "const": "synthetic",
+                  "title": "Data Mode",
+                  "default": "synthetic"
+                },
+                "investment_advice": {
+                  "type": "boolean",
+                  "const": false,
+                  "title": "Investment Advice",
+                  "default": false
+                },
+                "model_id": {
+                  "type": "string",
+                  "const": "demo_synthetic_graph_model",
+                  "title": "Model Id"
+                },
+                "model_version": {
+                  "type": "string",
+                  "title": "Model Version"
+                },
+                "original_factor_gcn": {
+                  "type": "string",
+                  "const": "NOT INTEGRATED",
+                  "title": "Original Factor Gcn"
+                },
+                "trained_model": {
+                  "type": "boolean",
+                  "const": false,
+                  "title": "Trained Model"
+                },
+                "method": {
+                  "type": "string",
+                  "title": "Method"
+                },
+                "formula": {
+                  "type": "string",
+                  "title": "Formula"
+                },
+                "pipeline": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array",
+                  "title": "Pipeline"
+                },
+                "split": {
+                  "$ref": "#/components/schemas/DataSplit"
+                },
+                "metric_definitions": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object",
+                  "title": "Metric Definitions"
+                },
+                "limitations": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array",
+                  "title": "Limitations"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "model_id",
+                "model_version",
+                "original_factor_gcn",
+                "trained_model",
+                "method",
+                "formula",
+                "pipeline",
+                "split",
+                "metric_definitions",
+                "limitations"
+              ],
+              "title": "ModelInfoResponse"
+            },
+            "RiskParameters": {
+              "properties": {
+                "volatility_penalty": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "title": "Volatility Penalty"
+                },
+                "temperature": {
+                  "type": "number",
+                  "exclusiveMinimum": 0.0,
+                  "title": "Temperature"
+                },
+                "concentration": {
+                  "type": "number",
+                  "maximum": 1.0,
+                  "minimum": 0.0,
+                  "title": "Concentration"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "volatility_penalty",
+                "temperature",
+                "concentration"
+              ],
+              "title": "RiskParameters"
+            },
+            "Scenario": {
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "enum": [
+                    "scenario_a",
+                    "scenario_b",
+                    "scenario_c"
+                  ],
+                  "title": "Id"
+                },
+                "label": {
+                  "type": "string",
+                  "title": "Label"
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Description"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "description"
+              ],
+              "title": "Scenario"
+            },
+            "ScenariosResponse": {
+              "properties": {
+                "data_mode": {
+                  "type": "string",
+                  "const": "synthetic",
+                  "title": "Data Mode",
+                  "default": "synthetic"
+                },
+                "investment_advice": {
+                  "type": "boolean",
+                  "const": false,
+                  "title": "Investment Advice",
+                  "default": false
+                },
+                "scenarios": {
+                  "items": {
+                    "$ref": "#/components/schemas/Scenario"
+                  },
+                  "type": "array",
+                  "title": "Scenarios"
+                },
+                "allowed_parameters": {
+                  "$ref": "#/components/schemas/AllowedParameters"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "scenarios",
+                "allowed_parameters"
+              ],
+              "title": "ScenariosResponse"
+            },
+            "SeedBounds": {
+              "properties": {
+                "minimum": {
+                  "type": "integer",
+                  "title": "Minimum"
+                },
+                "maximum": {
+                  "type": "integer",
+                  "title": "Maximum"
+                },
+                "default": {
+                  "type": "integer",
+                  "title": "Default"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "minimum",
+                "maximum",
+                "default"
+              ],
+              "title": "SeedBounds"
+            },
+            "SimulationRequest": {
+              "properties": {
+                "scenario_id": {
+                  "type": "string",
+                  "enum": [
+                    "scenario_a",
+                    "scenario_b",
+                    "scenario_c"
+                  ],
+                  "title": "Scenario Id"
+                },
+                "seed": {
+                  "type": "integer",
+                  "maximum": 2147483647.0,
+                  "minimum": 0.0,
+                  "title": "Seed",
+                  "default": 42
+                },
+                "risk_level": {
+                  "type": "string",
+                  "enum": [
+                    "low",
+                    "balanced",
+                    "high"
+                  ],
+                  "title": "Risk Level",
+                  "default": "balanced"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "scenario_id"
+              ],
+              "title": "SimulationRequest"
+            },
+            "SimulationResponse": {
+              "properties": {
+                "allocations": {
+                  "items": {
+                    "$ref": "#/components/schemas/Allocation"
+                  },
+                  "type": "array",
+                  "maxItems": 6,
+                  "minItems": 6,
+                  "title": "Allocations"
+                },
+                "metrics": {
+                  "$ref": "#/components/schemas/Metrics"
+                },
+                "equity_curve": {
+                  "items": {
+                    "$ref": "#/components/schemas/EquityPoint"
+                  },
+                  "type": "array",
+                  "maxItems": 61,
+                  "minItems": 61,
+                  "title": "Equity Curve"
+                },
+                "graph": {
+                  "$ref": "#/components/schemas/Graph"
+                },
+                "metadata": {
+                  "$ref": "#/components/schemas/Metadata"
+                },
+                "explainability": {
+                  "$ref": "#/components/schemas/Explainability"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "allocations",
+                "metrics",
+                "equity_curve",
+                "graph",
+                "metadata",
+                "explainability"
+              ],
+              "title": "SimulationResponse"
+            },
+            "ValidationError": {
+              "properties": {
+                "loc": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "integer"
+                      }
+                    ]
+                  },
+                  "type": "array",
+                  "title": "Location"
+                },
+                "msg": {
+                  "type": "string",
+                  "title": "Message"
+                },
+                "type": {
+                  "type": "string",
+                  "title": "Error Type"
+                },
+                "input": {
+                  "title": "Input"
+                },
+                "ctx": {
+                  "type": "object",
+                  "title": "Context"
+                }
+              },
+              "type": "object",
+              "required": [
+                "loc",
+                "msg",
+                "type"
+              ],
+              "title": "ValidationError"
+            }
+          }
+        }
+      }
+    },
+    "scenario_a": {
+      "status": 200,
+      "request": {
+        "scenario_id": "scenario_a",
+        "seed": 42,
+        "risk_level": "balanced"
+      },
+      "body": {
+        "allocations": [
+          {
+            "asset_id": "SIM-01",
+            "label": "Synthetic Asset 1",
+            "weight": 0.1666510583
+          },
+          {
+            "asset_id": "SIM-02",
+            "label": "Synthetic Asset 2",
+            "weight": 0.2036139969
+          },
+          {
+            "asset_id": "SIM-03",
+            "label": "Synthetic Asset 3",
+            "weight": 0.1042870738
+          },
+          {
+            "asset_id": "SIM-04",
+            "label": "Synthetic Asset 4",
+            "weight": 0.1470983127
+          },
+          {
+            "asset_id": "SIM-05",
+            "label": "Synthetic Asset 5",
+            "weight": 0.158452914
+          },
+          {
+            "asset_id": "SIM-06",
+            "label": "Synthetic Asset 6",
+            "weight": 0.2198966444
+          }
+        ],
+        "metrics": {
+          "cumulative_return": 0.0410437643,
+          "annualized_volatility": 0.0927317363,
+          "sharpe_ratio": 1.8680217815,
+          "max_drawdown": 0.0285124062,
+          "evaluation_days": 60
+        },
+        "equity_curve": [
+          {
+            "day": 0,
+            "equity": 1.0
+          },
+          {
+            "day": 1,
+            "equity": 1.0035141542
+          },
+          {
+            "day": 2,
+            "equity": 0.9987625427
+          },
+          {
+            "day": 3,
+            "equity": 0.9958610411
+          },
+          {
+            "day": 4,
+            "equity": 1.0043734443
+          },
+          {
+            "day": 5,
+            "equity": 1.0093293102
+          },
+          {
+            "day": 6,
+            "equity": 1.0069618095
+          },
+          {
+            "day": 7,
+            "equity": 0.9968245967
+          },
+          {
+            "day": 8,
+            "equity": 0.9996184945
+          },
+          {
+            "day": 9,
+            "equity": 1.0017758166
+          },
+          {
+            "day": 10,
+            "equity": 1.0003585367
+          },
+          {
+            "day": 11,
+            "equity": 0.9941460943
+          },
+          {
+            "day": 12,
+            "equity": 0.9916553721
+          },
+          {
+            "day": 13,
+            "equity": 0.9805509029
+          },
+          {
+            "day": 14,
+            "equity": 0.9875574594
+          },
+          {
+            "day": 15,
+            "equity": 1.0010144824
+          },
+          {
+            "day": 16,
+            "equity": 1.0073989551
+          },
+          {
+            "day": 17,
+            "equity": 1.0076331595
+          },
+          {
+            "day": 18,
+            "equity": 1.0027764373
+          },
+          {
+            "day": 19,
+            "equity": 0.9997318526
+          },
+          {
+            "day": 20,
+            "equity": 1.0054997283
+          },
+          {
+            "day": 21,
+            "equity": 1.0101018698
+          },
+          {
+            "day": 22,
+            "equity": 1.0082566427
+          },
+          {
+            "day": 23,
+            "equity": 1.0036537566
+          },
+          {
+            "day": 24,
+            "equity": 1.0040942859
+          },
+          {
+            "day": 25,
+            "equity": 0.9922384207
+          },
+          {
+            "day": 26,
+            "equity": 0.9948885324
+          },
+          {
+            "day": 27,
+            "equity": 1.0002012567
+          },
+          {
+            "day": 28,
+            "equity": 1.0051466476
+          },
+          {
+            "day": 29,
+            "equity": 1.0093953389
+          },
+          {
+            "day": 30,
+            "equity": 1.0057589915
+          },
+          {
+            "day": 31,
+            "equity": 1.0076829217
+          },
+          {
+            "day": 32,
+            "equity": 0.9979506998
+          },
+          {
+            "day": 33,
+            "equity": 1.0052121475
+          },
+          {
+            "day": 34,
+            "equity": 1.0123473139
+          },
+          {
+            "day": 35,
+            "equity": 1.0214916206
+          },
+          {
+            "day": 36,
+            "equity": 1.0105673329
+          },
+          {
+            "day": 37,
+            "equity": 1.0122982962
+          },
+          {
+            "day": 38,
+            "equity": 1.0158366123
+          },
+          {
+            "day": 39,
+            "equity": 1.0163912853
+          },
+          {
+            "day": 40,
+            "equity": 1.0144754985
+          },
+          {
+            "day": 41,
+            "equity": 1.0232021734
+          },
+          {
+            "day": 42,
+            "equity": 1.0165694448
+          },
+          {
+            "day": 43,
+            "equity": 1.0178310026
+          },
+          {
+            "day": 44,
+            "equity": 1.017676594
+          },
+          {
+            "day": 45,
+            "equity": 1.0243439165
+          },
+          {
+            "day": 46,
+            "equity": 1.0217313185
+          },
+          {
+            "day": 47,
+            "equity": 1.0321483495
+          },
+          {
+            "day": 48,
+            "equity": 1.0300702545
+          },
+          {
+            "day": 49,
+            "equity": 1.031794963
+          },
+          {
+            "day": 50,
+            "equity": 1.0292446392
+          },
+          {
+            "day": 51,
+            "equity": 1.0293380984
+          },
+          {
+            "day": 52,
+            "equity": 1.0380506554
+          },
+          {
+            "day": 53,
+            "equity": 1.0444867824
+          },
+          {
+            "day": 54,
+            "equity": 1.0502054037
+          },
+          {
+            "day": 55,
+            "equity": 1.0588401698
+          },
+          {
+            "day": 56,
+            "equity": 1.0582597463
+          },
+          {
+            "day": 57,
+            "equity": 1.0505651575
+          },
+          {
+            "day": 58,
+            "equity": 1.0477110625
+          },
+          {
+            "day": 59,
+            "equity": 1.0431192474
+          },
+          {
+            "day": 60,
+            "equity": 1.0410437643
+          }
+        ],
+        "graph": {
+          "nodes": [
+            {
+              "id": "SIM-01",
+              "label": "Synthetic Asset 1",
+              "training_volatility": 0.0071240362,
+              "training_signal": 0.5570588011
+            },
+            {
+              "id": "SIM-02",
+              "label": "Synthetic Asset 2",
+              "training_volatility": 0.0067988129,
+              "training_signal": 0.9362825533
+            },
+            {
+              "id": "SIM-03",
+              "label": "Synthetic Asset 3",
+              "training_volatility": 0.0078479845,
+              "training_signal": -0.6290380605
+            },
+            {
+              "id": "SIM-04",
+              "label": "Synthetic Asset 4",
+              "training_volatility": 0.0093407419,
+              "training_signal": 0.4175301022
+            },
+            {
+              "id": "SIM-05",
+              "label": "Synthetic Asset 5",
+              "training_volatility": 0.0108142473,
+              "training_signal": 0.7229934202
+            },
+            {
+              "id": "SIM-06",
+              "label": "Synthetic Asset 6",
+              "training_volatility": 0.0121928717,
+              "training_signal": 1.2310030703
+            }
+          ],
+          "edges": [
+            {
+              "source": "SIM-01",
+              "target": "SIM-02",
+              "correlation": 0.6660287759,
+              "weight": 0.6660287759
+            },
+            {
+              "source": "SIM-01",
+              "target": "SIM-03",
+              "correlation": 0.628370856,
+              "weight": 0.628370856
+            },
+            {
+              "source": "SIM-02",
+              "target": "SIM-03",
+              "correlation": 0.5423842575,
+              "weight": 0.5423842575
+            },
+            {
+              "source": "SIM-04",
+              "target": "SIM-05",
+              "correlation": 0.3231620444,
+              "weight": 0.3231620444
+            }
+          ]
+        },
+        "metadata": {
+          "training_days": 120,
+          "evaluation_days": 60,
+          "training_window": [
+            0,
+            119
+          ],
+          "evaluation_window": [
+            120,
+            179
+          ],
+          "data_mode": "synthetic",
+          "investment_advice": false,
+          "model_id": "demo_synthetic_graph_model",
+          "model_version": "1.0.0",
+          "original_factor_gcn": "NOT INTEGRATED",
+          "scenario_id": "scenario_a",
+          "seed": 42,
+          "risk_level": "balanced",
+          "asset_count": 6
+        },
+        "explainability": {
+          "method": "Fixed-rule single-step graph propagation on synthetic calibration observations",
+          "formula": "C=corr(R_train); A_ij=abs(C_ij) if i!=j and abs(C_ij)>=0.25 else 0; P=row_normalize(A+I); s=mean(R_train)/sample_std(R_train)*sqrt(252); z=0.5*s+0.5*P@s; q=softmax((z-penalty*vol/mean(vol))/temperature); w=(1-concentration)/6+concentration*q",
+          "risk_parameters": {
+            "volatility_penalty": 0.75,
+            "temperature": 0.9,
+            "concentration": 0.65
+          },
+          "features_used": [
+            "calibration daily mean",
+            "calibration sample daily volatility",
+            "calibration Pearson correlation"
+          ],
+          "calibration": "Only synthetic observations 0..119 determine graph, features, and fixed allocations. No gradient training or model artifact.",
+          "evaluation": "Only subsequent synthetic observations 120..179 determine displayed metrics. Constant target weights are applied daily (implicit daily weight reset). Trading/rebalancing execution, turnover, fees, and costs are not modeled."
+        }
+      }
+    },
+    "scenario_b": {
+      "status": 200,
+      "request": {
+        "scenario_id": "scenario_b",
+        "seed": 42,
+        "risk_level": "balanced"
+      },
+      "body": {
+        "allocations": [
+          {
+            "asset_id": "SIM-01",
+            "label": "Synthetic Asset 1",
+            "weight": 0.1666510583
+          },
+          {
+            "asset_id": "SIM-02",
+            "label": "Synthetic Asset 2",
+            "weight": 0.2036139969
+          },
+          {
+            "asset_id": "SIM-03",
+            "label": "Synthetic Asset 3",
+            "weight": 0.1042870738
+          },
+          {
+            "asset_id": "SIM-04",
+            "label": "Synthetic Asset 4",
+            "weight": 0.1470983127
+          },
+          {
+            "asset_id": "SIM-05",
+            "label": "Synthetic Asset 5",
+            "weight": 0.158452914
+          },
+          {
+            "asset_id": "SIM-06",
+            "label": "Synthetic Asset 6",
+            "weight": 0.2198966444
+          }
+        ],
+        "metrics": {
+          "cumulative_return": 0.0207482891,
+          "annualized_volatility": 0.1704665442,
+          "sharpe_ratio": 0.5899189329,
+          "max_drawdown": 0.0572687163,
+          "evaluation_days": 60
+        },
+        "equity_curve": [
+          {
+            "day": 0,
+            "equity": 1.0
+          },
+          {
+            "day": 1,
+            "equity": 1.0076074179
+          },
+          {
+            "day": 2,
+            "equity": 0.9959010556
+          },
+          {
+            "day": 3,
+            "equity": 0.9894689043
+          },
+          {
+            "day": 4,
+            "equity": 1.0050518978
+          },
+          {
+            "day": 5,
+            "equity": 1.0133928753
+          },
+          {
+            "day": 6,
+            "equity": 1.007535529
+          },
+          {
+            "day": 7,
+            "equity": 0.9895603197
+          },
+          {
+            "day": 8,
+            "equity": 0.9959173265
+          },
+          {
+            "day": 9,
+            "equity": 0.9990928238
+          },
+          {
+            "day": 10,
+            "equity": 0.9954073253
+          },
+          {
+            "day": 11,
+            "equity": 0.9828720148
+          },
+          {
+            "day": 12,
+            "equity": 0.9752756824
+          },
+          {
+            "day": 13,
+            "equity": 0.9553571662
+          },
+          {
+            "day": 14,
+            "equity": 0.96474582
+          },
+          {
+            "day": 15,
+            "equity": 0.9874768182
+          },
+          {
+            "day": 16,
+            "equity": 0.9994681563
+          },
+          {
+            "day": 17,
+            "equity": 0.9987824215
+          },
+          {
+            "day": 18,
+            "equity": 0.9882116493
+          },
+          {
+            "day": 19,
+            "equity": 0.983539366
+          },
+          {
+            "day": 20,
+            "equity": 0.9952263527
+          },
+          {
+            "day": 21,
+            "equity": 1.0034511727
+          },
+          {
+            "day": 22,
+            "equity": 1.0025787487
+          },
+          {
+            "day": 23,
+            "equity": 0.992774205
+          },
+          {
+            "day": 24,
+            "equity": 0.9900215783
+          },
+          {
+            "day": 25,
+            "equity": 0.9684231278
+          },
+          {
+            "day": 26,
+            "equity": 0.9712599216
+          },
+          {
+            "day": 27,
+            "equity": 0.9802421486
+          },
+          {
+            "day": 28,
+            "equity": 0.9858203477
+          },
+          {
+            "day": 29,
+            "equity": 0.989538444
+          },
+          {
+            "day": 30,
+            "equity": 0.9854363824
+          },
+          {
+            "day": 31,
+            "equity": 0.9887645626
+          },
+          {
+            "day": 32,
+            "equity": 0.970355784
+          },
+          {
+            "day": 33,
+            "equity": 0.9829626169
+          },
+          {
+            "day": 34,
+            "equity": 0.9947584431
+          },
+          {
+            "day": 35,
+            "equity": 1.0111036524
+          },
+          {
+            "day": 36,
+            "equity": 0.9901368988
+          },
+          {
+            "day": 37,
+            "equity": 0.9923397345
+          },
+          {
+            "day": 38,
+            "equity": 0.999379192
+          },
+          {
+            "day": 39,
+            "equity": 1.0014109015
+          },
+          {
+            "day": 40,
+            "equity": 0.9974361171
+          },
+          {
+            "day": 41,
+            "equity": 1.0106071153
+          },
+          {
+            "day": 42,
+            "equity": 0.9984733204
+          },
+          {
+            "day": 43,
+            "equity": 0.9954452057
+          },
+          {
+            "day": 44,
+            "equity": 0.9934303886
+          },
+          {
+            "day": 45,
+            "equity": 1.0064291557
+          },
+          {
+            "day": 46,
+            "equity": 1.0000735397
+          },
+          {
+            "day": 47,
+            "equity": 1.01808536
+          },
+          {
+            "day": 48,
+            "equity": 1.014174571
+          },
+          {
+            "day": 49,
+            "equity": 1.0180200517
+          },
+          {
+            "day": 50,
+            "equity": 1.012346035
+          },
+          {
+            "day": 51,
+            "equity": 1.0102946152
+          },
+          {
+            "day": 52,
+            "equity": 1.0253138097
+          },
+          {
+            "day": 53,
+            "equity": 1.037564936
+          },
+          {
+            "day": 54,
+            "equity": 1.0433790518
+          },
+          {
+            "day": 55,
+            "equity": 1.058893343
+          },
+          {
+            "day": 56,
+            "equity": 1.0543708334
+          },
+          {
+            "day": 57,
+            "equity": 1.0395029865
+          },
+          {
+            "day": 58,
+            "equity": 1.03173713
+          },
+          {
+            "day": 59,
+            "equity": 1.0247369024
+          },
+          {
+            "day": 60,
+            "equity": 1.0207482891
+          }
+        ],
+        "graph": {
+          "nodes": [
+            {
+              "id": "SIM-01",
+              "label": "Synthetic Asset 1",
+              "training_volatility": 0.0071240362,
+              "training_signal": 0.5570588011
+            },
+            {
+              "id": "SIM-02",
+              "label": "Synthetic Asset 2",
+              "training_volatility": 0.0067988129,
+              "training_signal": 0.9362825533
+            },
+            {
+              "id": "SIM-03",
+              "label": "Synthetic Asset 3",
+              "training_volatility": 0.0078479845,
+              "training_signal": -0.6290380605
+            },
+            {
+              "id": "SIM-04",
+              "label": "Synthetic Asset 4",
+              "training_volatility": 0.0093407419,
+              "training_signal": 0.4175301022
+            },
+            {
+              "id": "SIM-05",
+              "label": "Synthetic Asset 5",
+              "training_volatility": 0.0108142473,
+              "training_signal": 0.7229934202
+            },
+            {
+              "id": "SIM-06",
+              "label": "Synthetic Asset 6",
+              "training_volatility": 0.0121928717,
+              "training_signal": 1.2310030703
+            }
+          ],
+          "edges": [
+            {
+              "source": "SIM-01",
+              "target": "SIM-02",
+              "correlation": 0.6660287759,
+              "weight": 0.6660287759
+            },
+            {
+              "source": "SIM-01",
+              "target": "SIM-03",
+              "correlation": 0.628370856,
+              "weight": 0.628370856
+            },
+            {
+              "source": "SIM-02",
+              "target": "SIM-03",
+              "correlation": 0.5423842575,
+              "weight": 0.5423842575
+            },
+            {
+              "source": "SIM-04",
+              "target": "SIM-05",
+              "correlation": 0.3231620444,
+              "weight": 0.3231620444
+            }
+          ]
+        },
+        "metadata": {
+          "training_days": 120,
+          "evaluation_days": 60,
+          "training_window": [
+            0,
+            119
+          ],
+          "evaluation_window": [
+            120,
+            179
+          ],
+          "data_mode": "synthetic",
+          "investment_advice": false,
+          "model_id": "demo_synthetic_graph_model",
+          "model_version": "1.0.0",
+          "original_factor_gcn": "NOT INTEGRATED",
+          "scenario_id": "scenario_b",
+          "seed": 42,
+          "risk_level": "balanced",
+          "asset_count": 6
+        },
+        "explainability": {
+          "method": "Fixed-rule single-step graph propagation on synthetic calibration observations",
+          "formula": "C=corr(R_train); A_ij=abs(C_ij) if i!=j and abs(C_ij)>=0.25 else 0; P=row_normalize(A+I); s=mean(R_train)/sample_std(R_train)*sqrt(252); z=0.5*s+0.5*P@s; q=softmax((z-penalty*vol/mean(vol))/temperature); w=(1-concentration)/6+concentration*q",
+          "risk_parameters": {
+            "volatility_penalty": 0.75,
+            "temperature": 0.9,
+            "concentration": 0.65
+          },
+          "features_used": [
+            "calibration daily mean",
+            "calibration sample daily volatility",
+            "calibration Pearson correlation"
+          ],
+          "calibration": "Only synthetic observations 0..119 determine graph, features, and fixed allocations. No gradient training or model artifact.",
+          "evaluation": "Only subsequent synthetic observations 120..179 determine displayed metrics. Constant target weights are applied daily (implicit daily weight reset). Trading/rebalancing execution, turnover, fees, and costs are not modeled."
+        }
+      }
+    },
+    "scenario_c": {
+      "status": 200,
+      "request": {
+        "scenario_id": "scenario_c",
+        "seed": 42,
+        "risk_level": "balanced"
+      },
+      "body": {
+        "allocations": [
+          {
+            "asset_id": "SIM-01",
+            "label": "Synthetic Asset 1",
+            "weight": 0.1852158472
+          },
+          {
+            "asset_id": "SIM-02",
+            "label": "Synthetic Asset 2",
+            "weight": 0.2905970107
+          },
+          {
+            "asset_id": "SIM-03",
+            "label": "Synthetic Asset 3",
+            "weight": 0.075990291
+          },
+          {
+            "asset_id": "SIM-04",
+            "label": "Synthetic Asset 4",
+            "weight": 0.1273393894
+          },
+          {
+            "asset_id": "SIM-05",
+            "label": "Synthetic Asset 5",
+            "weight": 0.1287583213
+          },
+          {
+            "asset_id": "SIM-06",
+            "label": "Synthetic Asset 6",
+            "weight": 0.1920991405
+          }
+        ],
+        "metrics": {
+          "cumulative_return": 0.0405838166,
+          "annualized_volatility": 0.075917648,
+          "sharpe_ratio": 2.2389023146,
+          "max_drawdown": 0.0198020628,
+          "evaluation_days": 60
+        },
+        "equity_curve": [
+          {
+            "day": 0,
+            "equity": 1.0
+          },
+          {
+            "day": 1,
+            "equity": 0.9983028836
+          },
+          {
+            "day": 2,
+            "equity": 0.998695084
+          },
+          {
+            "day": 3,
+            "equity": 0.9991387506
+          },
+          {
+            "day": 4,
+            "equity": 1.0018576563
+          },
+          {
+            "day": 5,
+            "equity": 1.004612363
+          },
+          {
+            "day": 6,
+            "equity": 1.0038079009
+          },
+          {
+            "day": 7,
+            "equity": 0.994074239
+          },
+          {
+            "day": 8,
+            "equity": 0.99270027
+          },
+          {
+            "day": 9,
+            "equity": 0.992700452
+          },
+          {
+            "day": 10,
+            "equity": 0.9925237331
+          },
+          {
+            "day": 11,
+            "equity": 0.9892104722
+          },
+          {
+            "day": 12,
+            "equity": 0.9929619357
+          },
+          {
+            "day": 13,
+            "equity": 0.9847189659
+          },
+          {
+            "day": 14,
+            "equity": 0.9923730534
+          },
+          {
+            "day": 15,
+            "equity": 1.0021929614
+          },
+          {
+            "day": 16,
+            "equity": 1.0066075735
+          },
+          {
+            "day": 17,
+            "equity": 1.0078089747
+          },
+          {
+            "day": 18,
+            "equity": 1.0055985709
+          },
+          {
+            "day": 19,
+            "equity": 0.9997506628
+          },
+          {
+            "day": 20,
+            "equity": 1.0004923363
+          },
+          {
+            "day": 21,
+            "equity": 1.0023751363
+          },
+          {
+            "day": 22,
+            "equity": 0.9946397373
+          },
+          {
+            "day": 23,
+            "equity": 0.9929413808
+          },
+          {
+            "day": 24,
+            "equity": 0.9964831127
+          },
+          {
+            "day": 25,
+            "equity": 0.9881526706
+          },
+          {
+            "day": 26,
+            "equity": 0.9916684886
+          },
+          {
+            "day": 27,
+            "equity": 0.9956760913
+          },
+          {
+            "day": 28,
+            "equity": 1.0022773676
+          },
+          {
+            "day": 29,
+            "equity": 1.00933709
+          },
+          {
+            "day": 30,
+            "equity": 1.0028338309
+          },
+          {
+            "day": 31,
+            "equity": 1.0032327005
+          },
+          {
+            "day": 32,
+            "equity": 0.9979241258
+          },
+          {
+            "day": 33,
+            "equity": 1.0023885979
+          },
+          {
+            "day": 34,
+            "equity": 1.0072937539
+          },
+          {
+            "day": 35,
+            "equity": 1.0111095607
+          },
+          {
+            "day": 36,
+            "equity": 1.006010901
+          },
+          {
+            "day": 37,
+            "equity": 1.0093581146
+          },
+          {
+            "day": 38,
+            "equity": 1.0077388355
+          },
+          {
+            "day": 39,
+            "equity": 1.0052106772
+          },
+          {
+            "day": 40,
+            "equity": 1.0033807793
+          },
+          {
+            "day": 41,
+            "equity": 1.0128665746
+          },
+          {
+            "day": 42,
+            "equity": 1.0068592853
+          },
+          {
+            "day": 43,
+            "equity": 1.0134659355
+          },
+          {
+            "day": 44,
+            "equity": 1.0157470938
+          },
+          {
+            "day": 45,
+            "equity": 1.017017282
+          },
+          {
+            "day": 46,
+            "equity": 1.0187896992
+          },
+          {
+            "day": 47,
+            "equity": 1.0256307099
+          },
+          {
+            "day": 48,
+            "equity": 1.0236042263
+          },
+          {
+            "day": 49,
+            "equity": 1.0220247621
+          },
+          {
+            "day": 50,
+            "equity": 1.0208476986
+          },
+          {
+            "day": 51,
+            "equity": 1.0239705088
+          },
+          {
+            "day": 52,
+            "equity": 1.0288399007
+          },
+          {
+            "day": 53,
+            "equity": 1.0305627553
+          },
+          {
+            "day": 54,
+            "equity": 1.0423887708
+          },
+          {
+            "day": 55,
+            "equity": 1.0478277744
+          },
+          {
+            "day": 56,
+            "equity": 1.0515989902
+          },
+          {
+            "day": 57,
+            "equity": 1.0473032764
+          },
+          {
+            "day": 58,
+            "equity": 1.0494812823
+          },
+          {
+            "day": 59,
+            "equity": 1.0429832388
+          },
+          {
+            "day": 60,
+            "equity": 1.0405838166
+          }
+        ],
+        "graph": {
+          "nodes": [
+            {
+              "id": "SIM-01",
+              "label": "Synthetic Asset 1",
+              "training_volatility": 0.0053544371,
+              "training_signal": 0.0474831021
+            },
+            {
+              "id": "SIM-02",
+              "label": "Synthetic Asset 2",
+              "training_volatility": 0.0069500056,
+              "training_signal": 0.7025917428
+            },
+            {
+              "id": "SIM-03",
+              "label": "Synthetic Asset 3",
+              "training_volatility": 0.0091834326,
+              "training_signal": -1.4611615877
+            },
+            {
+              "id": "SIM-04",
+              "label": "Synthetic Asset 4",
+              "training_volatility": 0.0118839147,
+              "training_signal": -0.0466082805
+            },
+            {
+              "id": "SIM-05",
+              "label": "Synthetic Asset 5",
+              "training_volatility": 0.014294274,
+              "training_signal": 0.1393300312
+            },
+            {
+              "id": "SIM-06",
+              "label": "Synthetic Asset 6",
+              "training_volatility": 0.0170435665,
+              "training_signal": 0.9079079284
+            }
+          ],
+          "edges": []
+        },
+        "metadata": {
+          "training_days": 120,
+          "evaluation_days": 60,
+          "training_window": [
+            0,
+            119
+          ],
+          "evaluation_window": [
+            120,
+            179
+          ],
+          "data_mode": "synthetic",
+          "investment_advice": false,
+          "model_id": "demo_synthetic_graph_model",
+          "model_version": "1.0.0",
+          "original_factor_gcn": "NOT INTEGRATED",
+          "scenario_id": "scenario_c",
+          "seed": 42,
+          "risk_level": "balanced",
+          "asset_count": 6
+        },
+        "explainability": {
+          "method": "Fixed-rule single-step graph propagation on synthetic calibration observations",
+          "formula": "C=corr(R_train); A_ij=abs(C_ij) if i!=j and abs(C_ij)>=0.25 else 0; P=row_normalize(A+I); s=mean(R_train)/sample_std(R_train)*sqrt(252); z=0.5*s+0.5*P@s; q=softmax((z-penalty*vol/mean(vol))/temperature); w=(1-concentration)/6+concentration*q",
+          "risk_parameters": {
+            "volatility_penalty": 0.75,
+            "temperature": 0.9,
+            "concentration": 0.65
+          },
+          "features_used": [
+            "calibration daily mean",
+            "calibration sample daily volatility",
+            "calibration Pearson correlation"
+          ],
+          "calibration": "Only synthetic observations 0..119 determine graph, features, and fixed allocations. No gradient training or model artifact.",
+          "evaluation": "Only subsequent synthetic observations 120..179 determine displayed metrics. Constant target weights are applied daily (implicit daily weight reset). Trading/rebalancing execution, turnover, fees, and costs are not modeled."
+        }
+      }
+    },
+    "local-docs": {
+      "status": 200
+    },
+    "dashboard-health": {
+      "status": 200
+    },
+    "static-site": {
+      "status": 200
+    }
+  }
+}

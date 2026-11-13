@@ -1,0 +1,5 @@
+-c requirements.txt
+fastapi
+pydantic
+uvicorn
+numpy

@@ -1,0 +1,390 @@
+{
+  "allocations": [
+    {
+      "asset_id": "SIM-01",
+      "label": "Synthetic Asset 1",
+      "weight": 0.1666510583
+    },
+    {
+      "asset_id": "SIM-02",
+      "label": "Synthetic Asset 2",
+      "weight": 0.2036139969
+    },
+    {
+      "asset_id": "SIM-03",
+      "label": "Synthetic Asset 3",
+      "weight": 0.1042870738
+    },
+    {
+      "asset_id": "SIM-04",
+      "label": "Synthetic Asset 4",
+      "weight": 0.1470983127
+    },
+    {
+      "asset_id": "SIM-05",
+      "label": "Synthetic Asset 5",
+      "weight": 0.158452914
+    },
+    {
+      "asset_id": "SIM-06",
+      "label": "Synthetic Asset 6",
+      "weight": 0.2198966444
+    }
+  ],
+  "metrics": {
+    "cumulative_return": 0.0410437643,
+    "annualized_volatility": 0.0927317363,
+    "sharpe_ratio": 1.8680217815,
+    "max_drawdown": 0.0285124062,
+    "evaluation_days": 60
+  },
+  "equity_curve": [
+    {
+      "day": 0,
+      "equity": 1.0
+    },
+    {
+      "day": 1,
+      "equity": 1.0035141542
+    },
+    {
+      "day": 2,
+      "equity": 0.9987625427
+    },
+    {
+      "day": 3,
+      "equity": 0.9958610411
+    },
+    {
+      "day": 4,
+      "equity": 1.0043734443
+    },
+    {
+      "day": 5,
+      "equity": 1.0093293102
+    },
+    {
+      "day": 6,
+      "equity": 1.0069618095
+    },
+    {
+      "day": 7,
+      "equity": 0.9968245967
+    },
+    {
+      "day": 8,
+      "equity": 0.9996184945
+    },
+    {
+      "day": 9,
+      "equity": 1.0017758166
+    },
+    {
+      "day": 10,
+      "equity": 1.0003585367
+    },
+    {
+      "day": 11,
+      "equity": 0.9941460943
+    },
+    {
+      "day": 12,
+      "equity": 0.9916553721
+    },
+    {
+      "day": 13,
+      "equity": 0.9805509029
+    },
+    {
+      "day": 14,
+      "equity": 0.9875574594
+    },
+    {
+      "day": 15,
+      "equity": 1.0010144824
+    },
+    {
+      "day": 16,
+      "equity": 1.0073989551
+    },
+    {
+      "day": 17,
+      "equity": 1.0076331595
+    },
+    {
+      "day": 18,
+      "equity": 1.0027764373
+    },
+    {
+      "day": 19,
+      "equity": 0.9997318526
+    },
+    {
+      "day": 20,
+      "equity": 1.0054997283
+    },
+    {
+      "day": 21,
+      "equity": 1.0101018698
+    },
+    {
+      "day": 22,
+      "equity": 1.0082566427
+    },
+    {
+      "day": 23,
+      "equity": 1.0036537566
+    },
+    {
+      "day": 24,
+      "equity": 1.0040942859
+    },
+    {
+      "day": 25,
+      "equity": 0.9922384207
+    },
+    {
+      "day": 26,
+      "equity": 0.9948885324
+    },
+    {
+      "day": 27,
+      "equity": 1.0002012567
+    },
+    {
+      "day": 28,
+      "equity": 1.0051466476
+    },
+    {
+      "day": 29,
+      "equity": 1.0093953389
+    },
+    {
+      "day": 30,
+      "equity": 1.0057589915
+    },
+    {
+      "day": 31,
+      "equity": 1.0076829217
+    },
+    {
+      "day": 32,
+      "equity": 0.9979506998
+    },
+    {
+      "day": 33,
+      "equity": 1.0052121475
+    },
+    {
+      "day": 34,
+      "equity": 1.0123473139
+    },
+    {
+      "day": 35,
+      "equity": 1.0214916206
+    },
+    {
+      "day": 36,
+      "equity": 1.0105673329
+    },
+    {
+      "day": 37,
+      "equity": 1.0122982962
+    },
+    {
+      "day": 38,
+      "equity": 1.0158366123
+    },
+    {
+      "day": 39,
+      "equity": 1.0163912853
+    },
+    {
+      "day": 40,
+      "equity": 1.0144754985
+    },
+    {
+      "day": 41,
+      "equity": 1.0232021734
+    },
+    {
+      "day": 42,
+      "equity": 1.0165694448
+    },
+    {
+      "day": 43,
+      "equity": 1.0178310026
+    },
+    {
+      "day": 44,
+      "equity": 1.017676594
+    },
+    {
+      "day": 45,
+      "equity": 1.0243439165
+    },
+    {
+      "day": 46,
+      "equity": 1.0217313185
+    },
+    {
+      "day": 47,
+      "equity": 1.0321483495
+    },
+    {
+      "day": 48,
+      "equity": 1.0300702545
+    },
+    {
+      "day": 49,
+      "equity": 1.031794963
+    },
+    {
+      "day": 50,
+      "equity": 1.0292446392
+    },
+    {
+      "day": 51,
+      "equity": 1.0293380984
+    },
+    {
+      "day": 52,
+      "equity": 1.0380506554
+    },
+    {
+      "day": 53,
+      "equity": 1.0444867824
+    },
+    {
+      "day": 54,
+      "equity": 1.0502054037
+    },
+    {
+      "day": 55,
+      "equity": 1.0588401698
+    },
+    {
+      "day": 56,
+      "equity": 1.0582597463
+    },
+    {
+      "day": 57,
+      "equity": 1.0505651575
+    },
+    {
+      "day": 58,
+      "equity": 1.0477110625
+    },
+    {
+      "day": 59,
+      "equity": 1.0431192474
+    },
+    {
+      "day": 60,
+      "equity": 1.0410437643
+    }
+  ],
+  "graph": {
+    "nodes": [
+      {
+        "id": "SIM-01",
+        "label": "Synthetic Asset 1",
+        "training_volatility": 0.0071240362,
+        "training_signal": 0.5570588011
+      },
+      {
+        "id": "SIM-02",
+        "label": "Synthetic Asset 2",
+        "training_volatility": 0.0067988129,
+        "training_signal": 0.9362825533
+      },
+      {
+        "id": "SIM-03",
+        "label": "Synthetic Asset 3",
+        "training_volatility": 0.0078479845,
+        "training_signal": -0.6290380605
+      },
+      {
+        "id": "SIM-04",
+        "label": "Synthetic Asset 4",
+        "training_volatility": 0.0093407419,
+        "training_signal": 0.4175301022
+      },
+      {
+        "id": "SIM-05",
+        "label": "Synthetic Asset 5",
+        "training_volatility": 0.0108142473,
+        "training_signal": 0.7229934202
+      },
+      {
+        "id": "SIM-06",
+        "label": "Synthetic Asset 6",
+        "training_volatility": 0.0121928717,
+        "training_signal": 1.2310030703
+      }
+    ],
+    "edges": [
+      {
+        "source": "SIM-01",
+        "target": "SIM-02",
+        "correlation": 0.6660287759,
+        "weight": 0.6660287759
+      },
+      {
+        "source": "SIM-01",
+        "target": "SIM-03",
+        "correlation": 0.628370856,
+        "weight": 0.628370856
+      },
+      {
+        "source": "SIM-02",
+        "target": "SIM-03",
+        "correlation": 0.5423842575,
+        "weight": 0.5423842575
+      },
+      {
+        "source": "SIM-04",
+        "target": "SIM-05",
+        "correlation": 0.3231620444,
+        "weight": 0.3231620444
+      }
+    ]
+  },
+  "metadata": {
+    "training_days": 120,
+    "evaluation_days": 60,
+    "training_window": [
+      0,
+      119
+    ],
+    "evaluation_window": [
+      120,
+      179
+    ],
+    "data_mode": "synthetic",
+    "investment_advice": false,
+    "model_id": "demo_synthetic_graph_model",
+    "model_version": "1.0.0",
+    "original_factor_gcn": "NOT INTEGRATED",
+    "scenario_id": "scenario_a",
+    "seed": 42,
+    "risk_level": "balanced",
+    "asset_count": 6
+  },
+  "explainability": {
+    "method": "Fixed-rule single-step graph propagation on synthetic calibration observations",
+    "formula": "C=corr(R_train); A_ij=abs(C_ij) if i!=j and abs(C_ij)>=0.25 else 0; P=row_normalize(A+I); s=mean(R_train)/sample_std(R_train)*sqrt(252); z=0.5*s+0.5*P@s; q=softmax((z-penalty*vol/mean(vol))/temperature); w=(1-concentration)/6+concentration*q",
+    "risk_parameters": {
+      "volatility_penalty": 0.75,
+      "temperature": 0.9,
+      "concentration": 0.65
+    },
+    "features_used": [
+      "calibration daily mean",
+      "calibration sample daily volatility",
+      "calibration Pearson correlation"
+    ],
+    "calibration": "Only synthetic observations 0..119 determine graph, features, and fixed allocations. No gradient training or model artifact.",
+    "evaluation": "Only subsequent synthetic observations 120..179 determine displayed metrics. Constant target weights are applied daily (implicit daily weight reset). Trading/rebalancing execution, turnover, fees, and costs are not modeled."
+  }
+}

@@ -1,0 +1,1037 @@
+{
+  "captured_at": "2026-11-13T17:25:43.372310+08:00",
+  "status": "passed",
+  "project": "graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+  "manual_dashboard_operation": "passed",
+  "cleanup": "passed",
+  "ports": {
+    "api": 63466,
+    "dashboard": 63467
+  },
+  "health": {
+    "data_mode": "synthetic",
+    "investment_advice": false,
+    "status": "ok",
+    "version": "1.0.0"
+  },
+  "request": {
+    "scenario_id": "scenario_a",
+    "seed": 42,
+    "risk_level": "balanced"
+  },
+  "response": {
+    "allocations": [
+      {
+        "asset_id": "SIM-01",
+        "label": "Synthetic Asset 1",
+        "weight": 0.1666510583
+      },
+      {
+        "asset_id": "SIM-02",
+        "label": "Synthetic Asset 2",
+        "weight": 0.2036139969
+      },
+      {
+        "asset_id": "SIM-03",
+        "label": "Synthetic Asset 3",
+        "weight": 0.1042870738
+      },
+      {
+        "asset_id": "SIM-04",
+        "label": "Synthetic Asset 4",
+        "weight": 0.1470983127
+      },
+      {
+        "asset_id": "SIM-05",
+        "label": "Synthetic Asset 5",
+        "weight": 0.158452914
+      },
+      {
+        "asset_id": "SIM-06",
+        "label": "Synthetic Asset 6",
+        "weight": 0.2198966444
+      }
+    ],
+    "metrics": {
+      "cumulative_return": 0.0410437643,
+      "annualized_volatility": 0.0927317363,
+      "sharpe_ratio": 1.8680217815,
+      "max_drawdown": 0.0285124062,
+      "evaluation_days": 60
+    },
+    "equity_curve": [
+      {
+        "day": 0,
+        "equity": 1.0
+      },
+      {
+        "day": 1,
+        "equity": 1.0035141542
+      },
+      {
+        "day": 2,
+        "equity": 0.9987625427
+      },
+      {
+        "day": 3,
+        "equity": 0.9958610411
+      },
+      {
+        "day": 4,
+        "equity": 1.0043734443
+      },
+      {
+        "day": 5,
+        "equity": 1.0093293102
+      },
+      {
+        "day": 6,
+        "equity": 1.0069618095
+      },
+      {
+        "day": 7,
+        "equity": 0.9968245967
+      },
+      {
+        "day": 8,
+        "equity": 0.9996184945
+      },
+      {
+        "day": 9,
+        "equity": 1.0017758166
+      },
+      {
+        "day": 10,
+        "equity": 1.0003585367
+      },
+      {
+        "day": 11,
+        "equity": 0.9941460943
+      },
+      {
+        "day": 12,
+        "equity": 0.9916553721
+      },
+      {
+        "day": 13,
+        "equity": 0.9805509029
+      },
+      {
+        "day": 14,
+        "equity": 0.9875574594
+      },
+      {
+        "day": 15,
+        "equity": 1.0010144824
+      },
+      {
+        "day": 16,
+        "equity": 1.0073989551
+      },
+      {
+        "day": 17,
+        "equity": 1.0076331595
+      },
+      {
+        "day": 18,
+        "equity": 1.0027764373
+      },
+      {
+        "day": 19,
+        "equity": 0.9997318526
+      },
+      {
+        "day": 20,
+        "equity": 1.0054997283
+      },
+      {
+        "day": 21,
+        "equity": 1.0101018698
+      },
+      {
+        "day": 22,
+        "equity": 1.0082566427
+      },
+      {
+        "day": 23,
+        "equity": 1.0036537566
+      },
+      {
+        "day": 24,
+        "equity": 1.0040942859
+      },
+      {
+        "day": 25,
+        "equity": 0.9922384207
+      },
+      {
+        "day": 26,
+        "equity": 0.9948885324
+      },
+      {
+        "day": 27,
+        "equity": 1.0002012567
+      },
+      {
+        "day": 28,
+        "equity": 1.0051466476
+      },
+      {
+        "day": 29,
+        "equity": 1.0093953389
+      },
+      {
+        "day": 30,
+        "equity": 1.0057589915
+      },
+      {
+        "day": 31,
+        "equity": 1.0076829217
+      },
+      {
+        "day": 32,
+        "equity": 0.9979506998
+      },
+      {
+        "day": 33,
+        "equity": 1.0052121475
+      },
+      {
+        "day": 34,
+        "equity": 1.0123473139
+      },
+      {
+        "day": 35,
+        "equity": 1.0214916206
+      },
+      {
+        "day": 36,
+        "equity": 1.0105673329
+      },
+      {
+        "day": 37,
+        "equity": 1.0122982962
+      },
+      {
+        "day": 38,
+        "equity": 1.0158366123
+      },
+      {
+        "day": 39,
+        "equity": 1.0163912853
+      },
+      {
+        "day": 40,
+        "equity": 1.0144754985
+      },
+      {
+        "day": 41,
+        "equity": 1.0232021734
+      },
+      {
+        "day": 42,
+        "equity": 1.0165694448
+      },
+      {
+        "day": 43,
+        "equity": 1.0178310026
+      },
+      {
+        "day": 44,
+        "equity": 1.017676594
+      },
+      {
+        "day": 45,
+        "equity": 1.0243439165
+      },
+      {
+        "day": 46,
+        "equity": 1.0217313185
+      },
+      {
+        "day": 47,
+        "equity": 1.0321483495
+      },
+      {
+        "day": 48,
+        "equity": 1.0300702545
+      },
+      {
+        "day": 49,
+        "equity": 1.031794963
+      },
+      {
+        "day": 50,
+        "equity": 1.0292446392
+      },
+      {
+        "day": 51,
+        "equity": 1.0293380984
+      },
+      {
+        "day": 52,
+        "equity": 1.0380506554
+      },
+      {
+        "day": 53,
+        "equity": 1.0444867824
+      },
+      {
+        "day": 54,
+        "equity": 1.0502054037
+      },
+      {
+        "day": 55,
+        "equity": 1.0588401698
+      },
+      {
+        "day": 56,
+        "equity": 1.0582597463
+      },
+      {
+        "day": 57,
+        "equity": 1.0505651575
+      },
+      {
+        "day": 58,
+        "equity": 1.0477110625
+      },
+      {
+        "day": 59,
+        "equity": 1.0431192474
+      },
+      {
+        "day": 60,
+        "equity": 1.0410437643
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "SIM-01",
+          "label": "Synthetic Asset 1",
+          "training_volatility": 0.0071240362,
+          "training_signal": 0.5570588011
+        },
+        {
+          "id": "SIM-02",
+          "label": "Synthetic Asset 2",
+          "training_volatility": 0.0067988129,
+          "training_signal": 0.9362825533
+        },
+        {
+          "id": "SIM-03",
+          "label": "Synthetic Asset 3",
+          "training_volatility": 0.0078479845,
+          "training_signal": -0.6290380605
+        },
+        {
+          "id": "SIM-04",
+          "label": "Synthetic Asset 4",
+          "training_volatility": 0.0093407419,
+          "training_signal": 0.4175301022
+        },
+        {
+          "id": "SIM-05",
+          "label": "Synthetic Asset 5",
+          "training_volatility": 0.0108142473,
+          "training_signal": 0.7229934202
+        },
+        {
+          "id": "SIM-06",
+          "label": "Synthetic Asset 6",
+          "training_volatility": 0.0121928717,
+          "training_signal": 1.2310030703
+        }
+      ],
+      "edges": [
+        {
+          "source": "SIM-01",
+          "target": "SIM-02",
+          "correlation": 0.6660287759,
+          "weight": 0.6660287759
+        },
+        {
+          "source": "SIM-01",
+          "target": "SIM-03",
+          "correlation": 0.628370856,
+          "weight": 0.628370856
+        },
+        {
+          "source": "SIM-02",
+          "target": "SIM-03",
+          "correlation": 0.5423842575,
+          "weight": 0.5423842575
+        },
+        {
+          "source": "SIM-04",
+          "target": "SIM-05",
+          "correlation": 0.3231620444,
+          "weight": 0.3231620444
+        }
+      ]
+    },
+    "metadata": {
+      "training_days": 120,
+      "evaluation_days": 60,
+      "training_window": [
+        0,
+        119
+      ],
+      "evaluation_window": [
+        120,
+        179
+      ],
+      "data_mode": "synthetic",
+      "investment_advice": false,
+      "model_id": "demo_synthetic_graph_model",
+      "model_version": "1.0.0",
+      "original_factor_gcn": "NOT INTEGRATED",
+      "scenario_id": "scenario_a",
+      "seed": 42,
+      "risk_level": "balanced",
+      "asset_count": 6
+    },
+    "explainability": {
+      "method": "Fixed-rule single-step graph propagation on synthetic calibration observations",
+      "formula": "C=corr(R_train); A_ij=abs(C_ij) if i!=j and abs(C_ij)>=0.25 else 0; P=row_normalize(A+I); s=mean(R_train)/sample_std(R_train)*sqrt(252); z=0.5*s+0.5*P@s; q=softmax((z-penalty*vol/mean(vol))/temperature); w=(1-concentration)/6+concentration*q",
+      "risk_parameters": {
+        "volatility_penalty": 0.75,
+        "temperature": 0.9,
+        "concentration": 0.65
+      },
+      "features_used": [
+        "calibration daily mean",
+        "calibration sample daily volatility",
+        "calibration Pearson correlation"
+      ],
+      "calibration": "Only synthetic observations 0..119 determine graph, features, and fixed allocations. No gradient training or model artifact.",
+      "evaluation": "Only subsequent synthetic observations 120..179 determine displayed metrics. Constant target weights are applied daily (implicit daily weight reset). Trading/rebalancing execution, turnover, fees, and costs are not modeled."
+    }
+  },
+  "timezone": "Asia/Taipei",
+  "scope": "one-shot local synthetic Docker verification; no publication",
+  "ui": {
+    "token": "0e6f537e8dc7445db8d2354571fa22c5",
+    "status": "passed",
+    "evidence": "docker-dashboard-ui-20261113.json",
+    "checks_passed": 6
+  },
+  "checks": [
+    {
+      "command": "docker context inspect desktop-linux --format \"{{json .Endpoints.docker.Host}}\"",
+      "argv": [
+        "docker",
+        "context",
+        "inspect",
+        "desktop-linux",
+        "--format",
+        "{{json .Endpoints.docker.Host}}"
+      ],
+      "started_at": "2026-11-13T17:19:21.269408+08:00",
+      "exit_code": 0,
+      "output": "\"npipe:////./pipe/dockerDesktopLinuxEngine\"\n",
+      "elapsed_seconds": 0.125
+    },
+    {
+      "command": "docker compose version",
+      "argv": [
+        "docker",
+        "compose",
+        "version"
+      ],
+      "started_at": "2026-11-13T17:19:21.385948+08:00",
+      "exit_code": 0,
+      "output": "Docker Compose version v5.6.0\n",
+      "elapsed_seconds": 0.203
+    },
+    {
+      "command": "docker info --format {{.ServerVersion}}",
+      "argv": [
+        "docker",
+        "info",
+        "--format",
+        "{{.ServerVersion}}"
+      ],
+      "started_at": "2026-11-13T17:19:21.586900+08:00",
+      "exit_code": 0,
+      "output": "29.9.1\n",
+      "elapsed_seconds": 0.719
+    },
+    {
+      "command": "docker ps -aq --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "argv": [
+        "docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5"
+      ],
+      "started_at": "2026-11-13T17:19:22.308952+08:00",
+      "exit_code": 0,
+      "output": "",
+      "elapsed_seconds": 6.5
+    },
+    {
+      "command": "docker network ls -q --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "argv": [
+        "docker",
+        "network",
+        "ls",
+        "-q",
+        "--filter",
+        "label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5"
+      ],
+      "started_at": "2026-11-13T17:19:28.821986+08:00",
+      "exit_code": 0,
+      "output": "",
+      "elapsed_seconds": 0.203
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f \"<project>\\compose.yaml\" config --format json",
+      "argv": [
+        "docker",
+        "compose",
+        "-p",
+        "graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+        "-f",
+        "<project>\\compose.yaml",
+        "config",
+        "--format",
+        "json"
+      ],
+      "started_at": "2026-11-13T17:19:29.031817+08:00",
+      "exit_code": 0,
+      "output": "{\n  \"name\": \"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\n  \"networks\": {\n    \"local-demo\": {\n      \"name\": \"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo\",\n      \"driver\": \"bridge\",\n      \"ipam\": {}\n    }\n  },\n  \"services\": {\n    \"api\": {\n      \"cap_drop\": [\n        \"ALL\"\n      ],\n      \"command\": null,\n      \"entrypoint\": null,\n      \"networks\": {\n        \"local-demo\": null\n      },\n      \"read_only\": true,\n      \"security_opt\": [\n        \"no-new-privileges:true\"\n      ],\n      \"tmpfs\": [\n        \"/tmp\"\n      ],\n      \"build\": {\n        \"context\": \"<project>\",\n        \"dockerfile\": \"Dockerfile.api\"\n      },\n      \"ports\": [\n        {\n          \"mode\": \"ingress\",\n          \"host_ip\": \"127.0.0.1\",\n          \"target\": 8000,\n          \"published\": \"8000\",\n          \"protocol\": \"tcp\"\n        }\n      ]\n    },\n    \"dashboard\": {\n      \"cap_drop\": [\n        \"ALL\"\n      ],\n      \"command\": null,\n      \"entrypoint\": null,\n      \"environment\": {\n        \"API_BASE_URL\": \"http://api:8000\",\n        \"HOME\": \"/tmp\",\n        \"STREAMLIT_BROWSER_GATHER_USAGE_STATS\": \"false\"\n      },\n      \"networks\": {\n        \"local-demo\": null\n      },\n      \"read_only\": true,\n      \"security_opt\": [\n        \"no-new-privileges:true\"\n      ],\n      \"tmpfs\": [\n        \"/tmp\"\n      ],\n      \"build\": {\n        \"context\": \"<project>\",\n        \"dockerfile\": \"Dockerfile.ui\"\n      },\n      \"depends_on\": {\n        \"api\": {\n          \"condition\": \"service_healthy\",\n          \"required\": true\n        }\n      },\n      \"ports\": [\n        {\n          \"mode\": \"ingress\",\n          \"host_ip\": \"127.0.0.1\",\n          \"target\": 8501,\n          \"published\": \"8501\",\n          \"protocol\": \"tcp\"\n        }\n      ]\n    }\n  }\n}",
+      "elapsed_seconds": 0.328
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f \"<project>\\.runtime\\docker-check-qdfnia_5\\compose.json\" config --quiet",
+      "argv": [
+        "docker",
+        "compose",
+        "-p",
+        "graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+        "-f",
+        "<project>\\.runtime\\docker-check-qdfnia_5\\compose.json",
+        "config",
+        "--quiet"
+      ],
+      "started_at": "2026-11-13T17:19:29.389818+08:00",
+      "exit_code": 0,
+      "output": "",
+      "elapsed_seconds": 0.391
+    },
+    {
+      "command": "docker image inspect graph-guide-check-eca6f554e8004209a106c01095c7744b-api:latest --format {{.Id}}",
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "graph-guide-check-eca6f554e8004209a106c01095c7744b-api:latest",
+        "--format",
+        "{{.Id}}"
+      ],
+      "started_at": "2026-11-13T17:19:29.840642+08:00",
+      "exit_code": 0,
+      "output": "sha256:16e77c702ff7acdd37f9e2ef919723b0830a12895ae6aeb45b57b8231a60c6c3\n",
+      "elapsed_seconds": 0.203
+    },
+    {
+      "command": "docker image inspect graph-guide-check-eca6f554e8004209a106c01095c7744b-dashboard:latest --format {{.Id}}",
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "graph-guide-check-eca6f554e8004209a106c01095c7744b-dashboard:latest",
+        "--format",
+        "{{.Id}}"
+      ],
+      "started_at": "2026-11-13T17:19:30.064898+08:00",
+      "exit_code": 0,
+      "output": "sha256:8bdabf37ce76a67c0c3cedc722df28369329bcba29578d9aea31e3ea22a94d7f\n",
+      "elapsed_seconds": 0.172
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f \"<project>\\.runtime\\docker-check-qdfnia_5\\compose.json\" up --no-build --wait --wait-timeout 180",
+      "argv": [
+        "docker",
+        "compose",
+        "-p",
+        "graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+        "-f",
+        "<project>\\.runtime\\docker-check-qdfnia_5\\compose.json",
+        "up",
+        "--no-build",
+        "--wait",
+        "--wait-timeout",
+        "180"
+      ],
+      "started_at": "2026-11-13T17:19:30.274148+08:00",
+      "exit_code": 0,
+      "output": " Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Creating \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Creating \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Created \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Created \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Creating \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Created \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Creating \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Created \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Starting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Started \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Waiting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Healthy \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Starting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Started \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Waiting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Waiting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Healthy \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Healthy \n",
+      "elapsed_seconds": 13.469
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f \"<project>\\.runtime\\docker-check-qdfnia_5\\compose.json\" port api 8000",
+      "argv": [
+        "docker",
+        "compose",
+        "-p",
+        "graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+        "-f",
+        "<project>\\.runtime\\docker-check-qdfnia_5\\compose.json",
+        "port",
+        "api",
+        "8000"
+      ],
+      "started_at": "2026-11-13T17:19:43.771060+08:00",
+      "exit_code": 0,
+      "output": "127.0.0.1:63466\n",
+      "elapsed_seconds": 0.266
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f \"<project>\\.runtime\\docker-check-qdfnia_5\\compose.json\" port dashboard 8501",
+      "argv": [
+        "docker",
+        "compose",
+        "-p",
+        "graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+        "-f",
+        "<project>\\.runtime\\docker-check-qdfnia_5\\compose.json",
+        "port",
+        "dashboard",
+        "8501"
+      ],
+      "started_at": "2026-11-13T17:19:44.050682+08:00",
+      "exit_code": 0,
+      "output": "127.0.0.1:63467\n",
+      "elapsed_seconds": 0.218
+    },
+    {
+      "command": "docker ps -aq --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "argv": [
+        "docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5"
+      ],
+      "started_at": "2026-11-13T17:19:44.794466+08:00",
+      "exit_code": 0,
+      "output": "2c260d2a678c\n48d9f8260fa6\n",
+      "elapsed_seconds": 0.141
+    },
+    {
+      "command": "docker inspect 2c260d2a678c --format \"{\\\"Id\\\":{{json .Id}},\\\"Name\\\":{{json .Name}},\\\"HostConfig\\\":{\\\"Memory\\\":{{json (index .HostConfig \\\"Memory\\\")}},\\\"MemorySwap\\\":{{json (index .HostConfig \\\"MemorySwap\\\")}},\\\"CpuPeriod\\\":{{json (index .HostConfig \\\"CpuPeriod\\\")}},\\\"CpuQuota\\\":{{json (index .HostConfig \\\"CpuQuota\\\")}},\\\"RestartPolicy\\\":{{json (index .HostConfig \\\"RestartPolicy\\\")}},\\\"NanoCpus\\\":{{json (index .HostConfig \\\"NanoCpus\\\")}},\\\"Tmpfs\\\":{{json (index .HostConfig \\\"Tmpfs\\\")}},\\\"ReadonlyRootfs\\\":{{json (index .HostConfig \\\"ReadonlyRootfs\\\")}}},\\\"Mounts\\\":{{json .Mounts}},\\\"Config\\\":{\\\"User\\\":{{json (index .Config \\\"User\\\")}},\\\"Labels\\\":{{json (index .Config \\\"Labels\\\")}}}}\"",
+      "argv": [
+        "docker",
+        "inspect",
+        "2c260d2a678c",
+        "--format",
+        "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"HostConfig\":{\"Memory\":{{json (index .HostConfig \"Memory\")}},\"MemorySwap\":{{json (index .HostConfig \"MemorySwap\")}},\"CpuPeriod\":{{json (index .HostConfig \"CpuPeriod\")}},\"CpuQuota\":{{json (index .HostConfig \"CpuQuota\")}},\"RestartPolicy\":{{json (index .HostConfig \"RestartPolicy\")}},\"NanoCpus\":{{json (index .HostConfig \"NanoCpus\")}},\"Tmpfs\":{{json (index .HostConfig \"Tmpfs\")}},\"ReadonlyRootfs\":{{json (index .HostConfig \"ReadonlyRootfs\")}}},\"Mounts\":{{json .Mounts}},\"Config\":{\"User\":{{json (index .Config \"User\")}},\"Labels\":{{json (index .Config \"Labels\")}}}}"
+      ],
+      "started_at": "2026-11-13T17:19:44.951813+08:00",
+      "exit_code": 0,
+      "output": "{\"Id\":\"2c260d2a678ce39f125843fbd2ba9783143b839760a9c19fda05bfc950d2b2a1\",\"Name\":\"/graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1\",\"HostConfig\":{\"Memory\":536870912,\"MemorySwap\":536870912,\"CpuPeriod\":0,\"CpuQuota\":0,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"},\"NanoCpus\":500000000,\"Tmpfs\":{\"/tmp\":\"size=64m\"},\"ReadonlyRootfs\":true},\"Mounts\":[],\"Config\":{\"User\":\"learner\",\"Labels\":{\"com.docker.compose.config-hash\":\"f781a8977e8411e251b703d091f31598ba2046e3b6a1f34e7e2dded6f6d78364\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"api:service_healthy:false\",\"com.docker.compose.image\":\"sha256:8bdabf37ce76a67c0c3cedc722df28369329bcba29578d9aea31e3ea22a94d7f\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\"com.docker.compose.project.config_files\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\\\\compose.json\",\"com.docker.compose.project.working_dir\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\",\"com.docker.compose.service\":\"dashboard\",\"com.docker.compose.version\":\"5.6.0\",\"io.rozias.guide.verification\":\"0e6f537e8dc7445db8d2354571fa22c5\"}}}\n",
+      "elapsed_seconds": 0.125
+    },
+    {
+      "command": "docker inspect 48d9f8260fa6 --format \"{\\\"Id\\\":{{json .Id}},\\\"Name\\\":{{json .Name}},\\\"HostConfig\\\":{\\\"Memory\\\":{{json (index .HostConfig \\\"Memory\\\")}},\\\"MemorySwap\\\":{{json (index .HostConfig \\\"MemorySwap\\\")}},\\\"CpuPeriod\\\":{{json (index .HostConfig \\\"CpuPeriod\\\")}},\\\"CpuQuota\\\":{{json (index .HostConfig \\\"CpuQuota\\\")}},\\\"RestartPolicy\\\":{{json (index .HostConfig \\\"RestartPolicy\\\")}},\\\"NanoCpus\\\":{{json (index .HostConfig \\\"NanoCpus\\\")}},\\\"Tmpfs\\\":{{json (index .HostConfig \\\"Tmpfs\\\")}},\\\"ReadonlyRootfs\\\":{{json (index .HostConfig \\\"ReadonlyRootfs\\\")}}},\\\"Mounts\\\":{{json .Mounts}},\\\"Config\\\":{\\\"User\\\":{{json (index .Config \\\"User\\\")}},\\\"Labels\\\":{{json (index .Config \\\"Labels\\\")}}}}\"",
+      "argv": [
+        "docker",
+        "inspect",
+        "48d9f8260fa6",
+        "--format",
+        "{\"Id\":{{json .Id}},\"Name\":{{json .Name}},\"HostConfig\":{\"Memory\":{{json (index .HostConfig \"Memory\")}},\"MemorySwap\":{{json (index .HostConfig \"MemorySwap\")}},\"CpuPeriod\":{{json (index .HostConfig \"CpuPeriod\")}},\"CpuQuota\":{{json (index .HostConfig \"CpuQuota\")}},\"RestartPolicy\":{{json (index .HostConfig \"RestartPolicy\")}},\"NanoCpus\":{{json (index .HostConfig \"NanoCpus\")}},\"Tmpfs\":{{json (index .HostConfig \"Tmpfs\")}},\"ReadonlyRootfs\":{{json (index .HostConfig \"ReadonlyRootfs\")}}},\"Mounts\":{{json .Mounts}},\"Config\":{\"User\":{{json (index .Config \"User\")}},\"Labels\":{{json (index .Config \"Labels\")}}}}"
+      ],
+      "started_at": "2026-11-13T17:19:45.104165+08:00",
+      "exit_code": 0,
+      "output": "{\"Id\":\"48d9f8260fa67f310ac53259db841c20c7d4e8d62bb19bb88fe7c79c11b4f00d\",\"Name\":\"/graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1\",\"HostConfig\":{\"Memory\":402653184,\"MemorySwap\":402653184,\"CpuPeriod\":0,\"CpuQuota\":0,\"RestartPolicy\":{\"MaximumRetryCount\":0,\"Name\":\"no\"},\"NanoCpus\":500000000,\"Tmpfs\":{\"/tmp\":\"size=64m\"},\"ReadonlyRootfs\":true},\"Mounts\":[],\"Config\":{\"User\":\"learner\",\"Labels\":{\"com.docker.compose.config-hash\":\"9b7304daacb07c6eaaa074074939d7606c316d35de9510fe9ebe2fa5f8a55395\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:16e77c702ff7acdd37f9e2ef919723b0830a12895ae6aeb45b57b8231a60c6c3\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\"com.docker.compose.project.config_files\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\\\\compose.json\",\"com.docker.compose.project.working_dir\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\",\"com.docker.compose.service\":\"api\",\"com.docker.compose.version\":\"5.6.0\",\"io.rozias.guide.verification\":\"0e6f537e8dc7445db8d2354571fa22c5\"}}}\n",
+      "elapsed_seconds": 0.125
+    },
+    {
+      "command": "docker ps -aq --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "argv": [
+        "docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5"
+      ],
+      "started_at": "2026-11-13T17:25:20.904320+08:00",
+      "exit_code": 0,
+      "output": "2c260d2a678c\n48d9f8260fa6\n",
+      "elapsed_seconds": 0.641
+    },
+    {
+      "command": "docker network ls -q --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "argv": [
+        "docker",
+        "network",
+        "ls",
+        "-q",
+        "--filter",
+        "label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5"
+      ],
+      "started_at": "2026-11-13T17:25:21.546445+08:00",
+      "exit_code": 0,
+      "output": "916358d1fec5\n",
+      "elapsed_seconds": 0.094
+    },
+    {
+      "command": "docker inspect 2c260d2a678c --format \"{{json .Config.Labels}} \"",
+      "argv": [
+        "docker",
+        "inspect",
+        "2c260d2a678c",
+        "--format",
+        "{{json .Config.Labels}} "
+      ],
+      "started_at": "2026-11-13T17:25:21.646940+08:00",
+      "exit_code": 0,
+      "output": "{\"com.docker.compose.config-hash\":\"f781a8977e8411e251b703d091f31598ba2046e3b6a1f34e7e2dded6f6d78364\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"api:service_healthy:false\",\"com.docker.compose.image\":\"sha256:8bdabf37ce76a67c0c3cedc722df28369329bcba29578d9aea31e3ea22a94d7f\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\"com.docker.compose.project.config_files\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\\\\compose.json\",\"com.docker.compose.project.working_dir\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\",\"com.docker.compose.service\":\"dashboard\",\"com.docker.compose.version\":\"5.6.0\",\"io.rozias.guide.verification\":\"0e6f537e8dc7445db8d2354571fa22c5\"} \n",
+      "elapsed_seconds": 0.094
+    },
+    {
+      "command": "docker inspect 48d9f8260fa6 --format \"{{json .Config.Labels}} \"",
+      "argv": [
+        "docker",
+        "inspect",
+        "48d9f8260fa6",
+        "--format",
+        "{{json .Config.Labels}} "
+      ],
+      "started_at": "2026-11-13T17:25:21.744939+08:00",
+      "exit_code": 0,
+      "output": "{\"com.docker.compose.config-hash\":\"9b7304daacb07c6eaaa074074939d7606c316d35de9510fe9ebe2fa5f8a55395\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:16e77c702ff7acdd37f9e2ef919723b0830a12895ae6aeb45b57b8231a60c6c3\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\"com.docker.compose.project.config_files\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\\\\compose.json\",\"com.docker.compose.project.working_dir\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\",\"com.docker.compose.service\":\"api\",\"com.docker.compose.version\":\"5.6.0\",\"io.rozias.guide.verification\":\"0e6f537e8dc7445db8d2354571fa22c5\"} \n",
+      "elapsed_seconds": 0.078
+    },
+    {
+      "command": "docker network inspect 916358d1fec5 --format \"{{json .Labels}} \"",
+      "argv": [
+        "docker",
+        "network",
+        "inspect",
+        "916358d1fec5",
+        "--format",
+        "{{json .Labels}} "
+      ],
+      "started_at": "2026-11-13T17:25:21.838571+08:00",
+      "exit_code": 0,
+      "output": "{\"com.docker.compose.config-hash\":\"c96b00ceb971be3018d8d1fb42c2475dfa03ebe30a33a6746dfec7ab8102d9b4\",\"com.docker.compose.network\":\"local-demo\",\"com.docker.compose.project\":\"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\"com.docker.compose.version\":\"5.6.0\",\"io.rozias.guide.verification\":\"0e6f537e8dc7445db8d2354571fa22c5\"} \n",
+      "elapsed_seconds": 0.094
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f \"<project>\\.runtime\\docker-check-qdfnia_5\\compose.json\" down --timeout 15",
+      "argv": [
+        "docker",
+        "compose",
+        "-p",
+        "graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+        "-f",
+        "<project>\\.runtime\\docker-check-qdfnia_5\\compose.json",
+        "down",
+        "--timeout",
+        "15"
+      ],
+      "started_at": "2026-11-13T17:25:21.939258+08:00",
+      "exit_code": 0,
+      "output": " Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Stopping \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Stopped \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Removing \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Removed \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Stopping \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Stopped \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Removing \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Removed \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Removing \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Removed \n",
+      "elapsed_seconds": 6.031
+    },
+    {
+      "command": "docker ps -aq --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "argv": [
+        "docker",
+        "ps",
+        "-aq",
+        "--filter",
+        "label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5"
+      ],
+      "started_at": "2026-11-13T17:25:27.974318+08:00",
+      "exit_code": 0,
+      "output": "",
+      "elapsed_seconds": 0.094
+    },
+    {
+      "command": "docker network ls -q --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "argv": [
+        "docker",
+        "network",
+        "ls",
+        "-q",
+        "--filter",
+        "label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5"
+      ],
+      "started_at": "2026-11-13T17:25:28.089550+08:00",
+      "exit_code": 0,
+      "output": "",
+      "elapsed_seconds": 0.125
+    },
+    {
+      "command": "docker ps -q",
+      "argv": [
+        "docker",
+        "ps",
+        "-q"
+      ],
+      "started_at": "2026-11-13T17:25:28.244210+08:00",
+      "exit_code": 0,
+      "output": "",
+      "elapsed_seconds": 0.109
+    },
+    {
+      "command": "docker desktop stop --timeout 90",
+      "argv": [
+        "docker",
+        "desktop",
+        "stop",
+        "--timeout",
+        "90"
+      ],
+      "started_at": "2026-11-13T17:25:28.367507+08:00",
+      "exit_code": 0,
+      "output": "✓ Stopping Docker Desktop\n",
+      "elapsed_seconds": 13.906
+    },
+    {
+      "command": "docker info --format {{.ServerVersion}}",
+      "argv": [
+        "docker",
+        "info",
+        "--format",
+        "{{.ServerVersion}}"
+      ],
+      "started_at": "2026-11-13T17:25:42.284108+08:00",
+      "exit_code": 1,
+      "output": "\nfailed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.\n",
+      "elapsed_seconds": 0.703
+    },
+    {
+      "command": "tasklist.exe /FI \"IMAGENAME eq Docker Desktop.exe\" /FO CSV /NH",
+      "argv": [
+        "tasklist.exe",
+        "/FI",
+        "IMAGENAME eq Docker Desktop.exe",
+        "/FO",
+        "CSV",
+        "/NH"
+      ],
+      "started_at": "2026-11-13T17:25:43.003156+08:00",
+      "exit_code": 0,
+      "output": "��T: �S������ŦX���w�ǫh���u�@���b���椤�C\n",
+      "elapsed_seconds": 0.172
+    },
+    {
+      "command": "tasklist.exe /FI \"IMAGENAME eq com.docker.backend.exe\" /FO CSV /NH",
+      "argv": [
+        "tasklist.exe",
+        "/FI",
+        "IMAGENAME eq com.docker.backend.exe",
+        "/FO",
+        "CSV",
+        "/NH"
+      ],
+      "started_at": "2026-11-13T17:25:43.196497+08:00",
+      "exit_code": 0,
+      "output": "��T: �S������ŦX���w�ǫh���u�@���b���椤�C\n",
+      "elapsed_seconds": 0.172
+    }
+  ],
+  "verifier_requested_command_trace": [
+    {
+      "command": "docker compose version",
+      "exit_code": 0,
+      "output": "Docker Compose version v5.6.0\n"
+    },
+    {
+      "command": "docker info --format {{.ServerVersion}}",
+      "exit_code": 0,
+      "output": "29.9.1\n"
+    },
+    {
+      "command": "docker ps -aq --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "docker network ls -q --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f <project>\\compose.yaml config --format json",
+      "exit_code": 0,
+      "output": "{\n  \"name\": \"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\n  \"networks\": {\n    \"local-demo\": {\n      \"name\": \"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo\",\n      \"driver\": \"bridge\",\n      \"ipam\": {}\n    }\n  },\n  \"services\": {\n    \"api\": {\n      \"cap_drop\": [\n        \"ALL\"\n      ],\n      \"command\": null,\n      \"entrypoint\": null,\n      \"networks\": {\n        \"local-demo\": null\n      },\n      \"read_only\": true,\n      \"security_opt\": [\n        \"no-new-privileges:true\"\n      ],\n      \"tmpfs\": [\n        \"/tmp\"\n      ],\n      \"build\": {\n        \"context\": \"<project>\",\n        \"dockerfile\": \"Dockerfile.api\"\n      },\n      \"ports\": [\n        {\n          \"mode\": \"ingress\",\n          \"host_ip\": \"127.0.0.1\",\n          \"target\": 8000,\n          \"published\": \"8000\",\n          \"protocol\": \"tcp\"\n        }\n      ]\n    },\n    \"dashboard\": {\n      \"cap_drop\": [\n        \"ALL\"\n      ],\n      \"command\": null,\n      \"entrypoint\": null,\n      \"environment\": {\n        \"API_BASE_URL\": \"http://api:8000\",\n        \"HOME\": \"/tmp\",\n        \"STREAMLIT_BROWSER_GATHER_USAGE_STATS\": \"false\"\n      },\n      \"networks\": {\n        \"local-demo\": null\n      },\n      \"read_only\": true,\n      \"security_opt\": [\n        \"no-new-privileges:true\"\n      ],\n      \"tmpfs\": [\n        \"/tmp\"\n      ],\n      \"build\": {\n        \"context\": \"<project>\",\n        \"dockerfile\": \"Dockerfile.ui\"\n      },\n      \"depends_on\": {\n        \"api\": {\n          \"condition\": \"service_healthy\",\n          \"required\": true\n        }\n      },\n      \"ports\": [\n        {\n          \"mode\": \"ingress\",\n          \"host_ip\": \"127.0.0.1\",\n          \"target\": 8501,\n          \"published\": \"8501\",\n          \"protocol\": \"tcp\"\n        }\n      ]\n    }\n  }\n}"
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f <project>\\.runtime\\docker-check-qdfnia_5\\compose.json config --quiet",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f <project>\\.runtime\\docker-check-qdfnia_5\\compose.json up --build --wait --wait-timeout 180",
+      "exit_code": 0,
+      "output": "Verified cached source hashes and image IDs, then executed up --no-build. See actual_commands.\n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Creating \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Creating \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Created \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Created \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Creating \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Created \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Creating \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Created \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Starting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Started \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Waiting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Healthy \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Starting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Started \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Waiting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Waiting \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Healthy \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Healthy \n"
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f <project>\\.runtime\\docker-check-qdfnia_5\\compose.json port api 8000",
+      "exit_code": 0,
+      "output": "127.0.0.1:63466\n"
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f <project>\\.runtime\\docker-check-qdfnia_5\\compose.json port dashboard 8501",
+      "exit_code": 0,
+      "output": "127.0.0.1:63467\n"
+    },
+    {
+      "command": "docker ps -aq --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "exit_code": 0,
+      "output": "2c260d2a678c\n48d9f8260fa6\n"
+    },
+    {
+      "command": "docker network ls -q --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "exit_code": 0,
+      "output": "916358d1fec5\n"
+    },
+    {
+      "command": "docker inspect 2c260d2a678c --format {{json .Config.Labels}} ",
+      "exit_code": 0,
+      "output": "{\"com.docker.compose.config-hash\":\"f781a8977e8411e251b703d091f31598ba2046e3b6a1f34e7e2dded6f6d78364\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"api:service_healthy:false\",\"com.docker.compose.image\":\"sha256:8bdabf37ce76a67c0c3cedc722df28369329bcba29578d9aea31e3ea22a94d7f\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\"com.docker.compose.project.config_files\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\\\\compose.json\",\"com.docker.compose.project.working_dir\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\",\"com.docker.compose.service\":\"dashboard\",\"com.docker.compose.version\":\"5.6.0\",\"io.rozias.guide.verification\":\"0e6f537e8dc7445db8d2354571fa22c5\"} \n"
+    },
+    {
+      "command": "docker inspect 48d9f8260fa6 --format {{json .Config.Labels}} ",
+      "exit_code": 0,
+      "output": "{\"com.docker.compose.config-hash\":\"9b7304daacb07c6eaaa074074939d7606c316d35de9510fe9ebe2fa5f8a55395\",\"com.docker.compose.container-number\":\"1\",\"com.docker.compose.depends_on\":\"\",\"com.docker.compose.image\":\"sha256:16e77c702ff7acdd37f9e2ef919723b0830a12895ae6aeb45b57b8231a60c6c3\",\"com.docker.compose.oneoff\":\"False\",\"com.docker.compose.project\":\"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\"com.docker.compose.project.config_files\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\\\\compose.json\",\"com.docker.compose.project.working_dir\":\"<project>\\\\.runtime\\\\docker-check-qdfnia_5\",\"com.docker.compose.service\":\"api\",\"com.docker.compose.version\":\"5.6.0\",\"io.rozias.guide.verification\":\"0e6f537e8dc7445db8d2354571fa22c5\"} \n"
+    },
+    {
+      "command": "docker network inspect 916358d1fec5 --format {{json .Labels}} ",
+      "exit_code": 0,
+      "output": "{\"com.docker.compose.config-hash\":\"c96b00ceb971be3018d8d1fb42c2475dfa03ebe30a33a6746dfec7ab8102d9b4\",\"com.docker.compose.network\":\"local-demo\",\"com.docker.compose.project\":\"graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5\",\"com.docker.compose.version\":\"5.6.0\",\"io.rozias.guide.verification\":\"0e6f537e8dc7445db8d2354571fa22c5\"} \n"
+    },
+    {
+      "command": "docker compose -p graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5 -f <project>\\.runtime\\docker-check-qdfnia_5\\compose.json down --timeout 15",
+      "exit_code": 0,
+      "output": " Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Stopping \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Stopped \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Removing \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-dashboard-1 Removed \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Stopping \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Stopped \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Removing \n Container graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5-api-1 Removed \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Removing \n Network graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5_local-demo Removed \n"
+    },
+    {
+      "command": "docker ps -aq --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "docker network ls -q --filter label=com.docker.compose.project=graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "requested_command_rewrites": [
+    {
+      "requested_argv": [
+        "docker",
+        "compose",
+        "-p",
+        "graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+        "-f",
+        "<project>\\.runtime\\docker-check-qdfnia_5\\compose.json",
+        "up",
+        "--build",
+        "--wait",
+        "--wait-timeout",
+        "180"
+      ],
+      "effective_command_start_index": 7,
+      "note": "Requested up --build replaced with verified cached images and up --no-build",
+      "effective_command_end_index_exclusive": 10
+    }
+  ],
+  "effective_commands_are_checks": true,
+  "resource_limits": {
+    "builder": {},
+    "runtime": {
+      "dashboard": {
+        "container_id": "2c260d2a678ce39f125843fbd2ba9783143b839760a9c19fda05bfc950d2b2a1",
+        "memory": 536870912,
+        "memory_swap": 536870912,
+        "nano_cpus": 500000000,
+        "tmpfs": {
+          "/tmp": "size=64m"
+        },
+        "read_only": true,
+        "user": "learner"
+      },
+      "api": {
+        "container_id": "48d9f8260fa67f310ac53259db841c20c7d4e8d62bb19bb88fe7c79c11b4f00d",
+        "memory": 402653184,
+        "memory_swap": 402653184,
+        "nano_cpus": 500000000,
+        "tmpfs": {
+          "/tmp": "size=64m"
+        },
+        "read_only": true,
+        "user": "learner"
+      }
+    }
+  },
+  "builder_cleanup": "not_needed",
+  "engine_stop": "passed",
+  "cache_verified": true,
+  "reused_images": {
+    "api": {
+      "reference": "graph-guide-check-eca6f554e8004209a106c01095c7744b-api:latest",
+      "id": "sha256:16e77c702ff7acdd37f9e2ef919723b0830a12895ae6aeb45b57b8231a60c6c3"
+    },
+    "dashboard": {
+      "reference": "graph-guide-check-eca6f554e8004209a106c01095c7744b-dashboard:latest",
+      "id": "sha256:8bdabf37ce76a67c0c3cedc722df28369329bcba29578d9aea31e3ea22a94d7f"
+    }
+  },
+  "cache_proof": {
+    "source_inputs": {
+      "backend/__init__.py": "527d1b8b1f8ad5abdb4c1bff20c705a66f33be2e6d6347d0e1a6d17a90574997",
+      "backend/app/__init__.py": "bc0fd2feac6798f3b8ee8f8ffb98cef0956ab584711e2d0547273210e803845b",
+      "backend/app/local_docs.py": "7de4c35b28b7efd4d7898da02d0c1cc362d1534d805bbc87db7e8cc36dfa3860",
+      "backend/app/main.py": "323412caad162d5e35c70724c041d75cab50ee6829d3f37cb48730339816b28c",
+      "backend/app/routes.py": "b84056e54698ea19f813d1aa9c3b9207c6060fe364ecce6e5e6b60b9395f78af",
+      "backend/app/schemas.py": "6d61f61250ce21dcdf9b88906d39617a6bcbd5b67d7b7f902dbf2fe1b94e009a",
+      "backend/app/services/__init__.py": "81c1fc5f447a7433a3447f6320209ec3a22f08329a138680509e0f58e123c5a4",
+      "backend/app/services/simulation.py": "e5f3c2da73ff17a9d70da731b4ad2cd90ce1204dba0d5b87164e0dc9ea0dde41",
+      "demo/__init__.py": "7e04deff00b1f1e3d6071892062a9ddbd5dde80d72128bc3928bf9dba005b4c7",
+      "demo/graph_demo_model.py": "dbbf13ff42906ae0900fa4259793a36e36056e036f36592b076a8aad1ef3b25a",
+      "demo/synthetic_data.py": "3ea75e93707567e82ab3639ebda7857b3d920b7cbd62a547808fe94b7dbc0896",
+      "dashboard/app.py": "f21207cbb0db563eecb432dd85236439bf1cdadd1cd3c74dba27c66e16275aca",
+      "requirements.txt": "0621f48c1ea8b78415358ad0358c110fe4e8b07cca28e2f68881694bcaba57f6",
+      "requirements-api.txt": "26415b3fa24cc26b9c0f1a43b38be459be2794b297fff3d40491e72347045060",
+      "requirements-ui.txt": "fd03367e28aaac711b7dcbfeda492fafd82f3d6a0180eb03e9b88e5ee3a36a41",
+      "Dockerfile.api": "ea4d3b2ce3ba7afbe0ff2cecf0a3cbbc3229a0207dd2d802f46e8e8f5bd79650",
+      "Dockerfile.ui": "279509952e12296f795acfe7d74952a7e24287eea1d6a55fc8fd19d70c82bffa",
+      ".dockerignore": "8e3e6a785eade9c002954d6983d07a0a04daf8475b967c8a486362dc8acbac4c"
+    },
+    "build_evidence": "history/20261113-docker-port-attempt/docker-once-20261113.json"
+  },
+  "tested_source_sha256": {
+    ".dockerignore": "8e3e6a785eade9c002954d6983d07a0a04daf8475b967c8a486362dc8acbac4c",
+    "backend/__init__.py": "527d1b8b1f8ad5abdb4c1bff20c705a66f33be2e6d6347d0e1a6d17a90574997",
+    "backend/app/__init__.py": "bc0fd2feac6798f3b8ee8f8ffb98cef0956ab584711e2d0547273210e803845b",
+    "backend/app/local_docs.py": "7de4c35b28b7efd4d7898da02d0c1cc362d1534d805bbc87db7e8cc36dfa3860",
+    "backend/app/main.py": "323412caad162d5e35c70724c041d75cab50ee6829d3f37cb48730339816b28c",
+    "backend/app/routes.py": "b84056e54698ea19f813d1aa9c3b9207c6060fe364ecce6e5e6b60b9395f78af",
+    "backend/app/schemas.py": "6d61f61250ce21dcdf9b88906d39617a6bcbd5b67d7b7f902dbf2fe1b94e009a",
+    "backend/app/services/__init__.py": "81c1fc5f447a7433a3447f6320209ec3a22f08329a138680509e0f58e123c5a4",
+    "backend/app/services/simulation.py": "e5f3c2da73ff17a9d70da731b4ad2cd90ce1204dba0d5b87164e0dc9ea0dde41",
+    "compose.yaml": "6285d675238e77b86265c2a5f18ee161fb5ee18f9db0118388a3a9993f72a1d8",
+    "dashboard/app.py": "f21207cbb0db563eecb432dd85236439bf1cdadd1cd3c74dba27c66e16275aca",
+    "demo/__init__.py": "7e04deff00b1f1e3d6071892062a9ddbd5dde80d72128bc3928bf9dba005b4c7",
+    "demo/graph_demo_model.py": "dbbf13ff42906ae0900fa4259793a36e36056e036f36592b076a8aad1ef3b25a",
+    "demo/synthetic_data.py": "3ea75e93707567e82ab3639ebda7857b3d920b7cbd62a547808fe94b7dbc0896",
+    "Dockerfile.api": "ea4d3b2ce3ba7afbe0ff2cecf0a3cbbc3229a0207dd2d802f46e8e8f5bd79650",
+    "Dockerfile.ui": "279509952e12296f795acfe7d74952a7e24287eea1d6a55fc8fd19d70c82bffa",
+    "requirements-api.txt": "26415b3fa24cc26b9c0f1a43b38be459be2794b297fff3d40491e72347045060",
+    "requirements-ui.txt": "fd03367e28aaac711b7dcbfeda492fafd82f3d6a0180eb03e9b88e5ee3a36a41",
+    "requirements.txt": "0621f48c1ea8b78415358ad0358c110fe4e8b07cca28e2f68881694bcaba57f6",
+    "scripts/verify_docker.py": "3894decd287e043727b4f2a3171199d91221eeb97ab363f164baadc85f215ed3"
+  },
+  "errors": [],
+  "one_shot_report": "docker-once-20261113.json"
+}

@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-11-13T13:45:54.637Z",
+  "method": "IAB DOM and rendered-layout checks",
+  "desktop_home": {
+    "columns": "221.167px 221.167px 221.167px 221.167px",
+    "overflow": false,
+    "text": "2026-11-13 · v1.1.2\n本機工程驗收完成\n查看實測紀錄 →\n\n合成模型、FastAPI、Streamlit 與 Docker 已完成本機驗收。測試容器與網路已清理，Docker 引擎已停止。\n\nPython 測試\n141\n通過 · 1 個警告\n網站檢查\n32\n通過\n容器 HTTP\n12\n通過\n介面操作\n6\n通過\n\n目前完成的是合成資料工程實作；原始 Factor GCN 的研究整合與對外發布各自保留審核。",
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "mobile_home": {
+    "columns": "140.667px 140.667px",
+    "metrics": [
+      "141\n通過 · 1 個警告",
+      "32\n通過",
+      "12\n通過",
+      "6\n通過"
+    ],
+    "overflow": false,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "mobile_docker": {
+    "images": [
+      {
+        "loaded": true,
+        "renderedWidth": 329.3333435058594
+      },
+      {
+        "loaded": true,
+        "renderedWidth": 329.3333435058594
+      }
+    ],
+    "overflow": false,
+    "receiptVisible": true,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "mobile_menu_open_close": true,
+  "screenshots": {
+    "status": "unavailable",
+    "reason": "Browser screenshot API returned Unable to capture screenshot on two supported capture methods."
+  },
+  "scope": "Static local site only; API, Streamlit and Docker were not started."
+}

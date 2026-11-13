@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "verified_at": "2026-11-13T17:25:43.372310+08:00",
+  "data_mode": "synthetic",
+  "investment_advice": false,
+  "original_factor_gcn": "NOT INTEGRATED",
+  "http_checks": 12,
+  "ui_checks": 6,
+  "ui_check_results": [
+    {
+      "name": "scenario_a_seed42_balanced_submit",
+      "status": "passed"
+    },
+    {
+      "name": "stale_result_warning",
+      "status": "passed"
+    },
+    {
+      "name": "scenario_b_seed7_low_submit",
+      "status": "passed"
+    },
+    {
+      "name": "request_json_matches_controls",
+      "status": "passed"
+    },
+    {
+      "name": "visible_synthetic_metadata",
+      "status": "passed"
+    },
+    {
+      "name": "graph_explanation_expander",
+      "status": "passed"
+    }
+  ],
+  "container_python": "3.12.16",
+  "container_platform": "Linux",
+  "cleanup": "passed",
+  "engine_stop": "passed",
+  "tested_source_files": 20,
+  "images_reused_after_source_and_id_check": true,
+  "host_access": "127.0.0.1",
+  "container_network": "project bridge; outbound connections allowed",
+  "screenshots": [
+    "assets/implementation/docker-dashboard-20261113.jpg",
+    "assets/implementation/docker-dashboard-metadata-20261113.jpg"
+  ],
+  "receipt_href": "assets/implementation/docker-verification.json"
+}

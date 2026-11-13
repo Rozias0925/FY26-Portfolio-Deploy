@@ -1,0 +1,10 @@
+# CPython 3.12; requirements.txt is the fully pinned runtime + test snapshot.
+fastapi>=0.115,<1
+pydantic>=2.11,<3
+uvicorn>=0.34,<1
+numpy>=2.2,<3
+pandas>=2.2,<4
+streamlit>=1.45,<2
+pytest>=8.3,<10
+httpx>=0.28,<1
+PyYAML>=6,<7

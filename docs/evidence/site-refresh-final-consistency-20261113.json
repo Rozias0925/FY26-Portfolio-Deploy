@@ -1,0 +1,11 @@
+{
+  "source_files": 48,
+  "web_files": 32,
+  "runtime_sources": 20,
+  "source_sha256": "f31243cec641ac9c951582c26047701a25e2f4f3d05488f092325cfd999c4fb7",
+  "generated_at": "2026-11-13T21:39:50.395017+08:00",
+  "all_hashes_match": true,
+  "website_evidence_matches": true,
+  "public_receipt_matches": true,
+  "all_recorded_checks_passed": true
+}

@@ -1,0 +1,13 @@
+{
+  "review_date": "2026-11-13",
+  "timezone": "Asia/Taipei",
+  "docker_process_count": 0,
+  "test_ports_listening": {
+    "63466": false,
+    "63467": false
+  },
+  "available_ram_gib": 1.93,
+  "full_verification": "passed",
+  "containers_networks_cleaned": "see docker-runtime-20261113.json",
+  "engine_stop": "passed"
+}

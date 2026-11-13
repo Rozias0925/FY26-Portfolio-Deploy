@@ -1,0 +1,49 @@
+{
+  "captured_at": "2026-11-13T09:25:20.463Z",
+  "timezone": "Asia/Taipei",
+  "token": "0e6f537e8dc7445db8d2354571fa22c5",
+  "project": "graph-guide-check-0e6f537e8dc7445db8d2354571fa22c5",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "scenario_a_seed42_balanced_submit",
+      "status": "passed",
+      "observed": "Success message, six allocations, metrics and 60-day curve rendered"
+    },
+    {
+      "name": "stale_result_warning",
+      "status": "passed",
+      "observed": "Scenario B selected while previous Scenario A result is explicitly labelled stale"
+    },
+    {
+      "name": "scenario_b_seed7_low_submit",
+      "status": "passed",
+      "observed": "Updated result parameters scenario_b seed=7 risk_level=low with success message and both chart headings"
+    },
+    {
+      "name": "request_json_matches_controls",
+      "status": "passed",
+      "observed": {
+        "scenario_id": "scenario_b",
+        "seed": 7,
+        "risk_level": "low"
+      }
+    },
+    {
+      "name": "visible_synthetic_metadata",
+      "status": "passed",
+      "observed": "synthetic, investment_advice=false, original_factor_gcn=NOT INTEGRATED, six assets and matching scenario/seed/risk"
+    },
+    {
+      "name": "graph_explanation_expander",
+      "status": "passed",
+      "observed": "API graph data and fixed-rule propagation explanation rendered"
+    }
+  ],
+  "screenshots": [
+    "docker-dashboard-20261113.jpg",
+    "docker-dashboard-metadata-20261113.jpg"
+  ],
+  "http_evidence": "docker-http-20261113.json",
+  "original_factor_gcn": "NOT INTEGRATED"
+}

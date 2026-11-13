@@ -1,0 +1,14 @@
+*
+!requirements.txt
+!requirements-api.txt
+!requirements-ui.txt
+!backend/
+!backend/**
+!demo/
+!demo/**
+!dashboard/
+!dashboard/**
+**/__pycache__
+**/*.pyc
+**/assets/
+**/.env*

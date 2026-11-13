@@ -1,0 +1,35 @@
+PASS content.js: valid JavaScript
+PASS app.js: valid JavaScript
+PASS implementation.js: valid JavaScript
+PASS nine chapters with consecutive unique IDs
+PASS every chapter includes six teaching sections
+PASS every chapter includes examples, file references and takeaway
+PASS at least 45 bilingual defined glossary terms
+PASS glossary IDs are unique safe anchors
+PASS every glossary chapter reference exists
+PASS all inline term references resolve to glossary
+PASS all HTML local assets exist within web/
+PASS no external script, stylesheet, image or font assets
+PASS only the user research and profile websites are externally linked
+PASS no browser network data APIs
+PASS no browser persistence, tracking or cookie APIs
+PASS no remote navigation or dynamic script injection in app
+PASS accessible shell: language, skip link, landmarks and compact navigation
+PASS homepage includes exact bilingual educational notices
+PASS playground explicitly distinguishes browser illustration from API
+PASS playground offers three scenarios and keyboard-operable JSON tabs
+PASS responsive and reduced-motion styles exist
+PASS static evidence marks pending records and dates execution snapshots
+PASS saved Python request/response match real HTTP record
+PASS saved proof preserves synthetic scope and API identity
+PASS selected source snapshots match the current source hashes
+PASS static screenshots and complete JSON files exist
+PASS published Docker receipt matches independently saved execution and scope
+PASS Docker gallery preserves original screenshots and excludes private runtime logs
+PASS implementation and reproduction routes are reachable from directory
+PASS reproduction includes startup, test, shutdown and missing-Docker scope
+PASS reproduction lists Node.js and distinguishes skipped website verification
+PASS law references use the two official article pages
+
+Web checks: 32 passed, 0 failed. Chapters: 9; glossary: 58; inline glossary references: 45.
+Scope: offline structural/content checks. Browser behavior, layout and true API execution require separate verification.

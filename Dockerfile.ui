@@ -1,0 +1,10 @@
+FROM python:3.12-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 STREAMLIT_BROWSER_GATHER_USAGE_STATS=false STREAMLIT_CLIENT_TOOLBAR_MODE=viewer
+WORKDIR /app
+COPY requirements.txt requirements-ui.txt ./
+RUN python -m pip install -r requirements-ui.txt && useradd --create-home --uid 10001 learner
+COPY --chown=learner:learner dashboard/ dashboard/
+USER learner
+EXPOSE 8501
+HEALTHCHECK --interval=15s --timeout=3s --start-period=30s --retries=3 CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=2)"
+CMD ["python", "-m", "streamlit", "run", "dashboard/app.py", "--server.address=0.0.0.0", "--server.port=8501", "--server.headless=true", "--browser.gatherUsageStats=false", "--server.fileWatcherType=none"]
