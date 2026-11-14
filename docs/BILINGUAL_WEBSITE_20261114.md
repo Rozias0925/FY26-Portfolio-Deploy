@@ -17,11 +17,11 @@ The browser demonstration uses identical computation in both languages. It remai
 
 ## Verification
 
-Full verification was recorded at `2026-11-14T03:37:16.289951+08:00` with Windows / CPython 3.12.14.
+Full verification was recorded at `2026-11-14T13:43:37.682656+08:00` with Windows / CPython 3.12.14.
 
 | Check | Result |
 | --- | --- |
-| Python tests | 141 passed, 1 deprecation warning, 20.95s |
+| Python tests | 141 passed, 1 deprecation warning, 32.43s |
 | Website checks | 46 passed, 0 failed |
 | Dependency consistency | pip check passed |
 | Source manifest | 52 files |
@@ -32,9 +32,9 @@ Full verification was recorded at `2026-11-14T03:37:16.289951+08:00` with Window
 | Glossary | 58 entries, API search, chapter filter, empty result, and reset checked |
 | Mobile 390 × 844 | Language control position, menu, glossary, metrics, and horizontal overflow checked |
 
-Source aggregate SHA256: `80788488f4dccb1bafbce710bc842684d2be0c9b24c63b199a56580a7748ac37`.
+Source aggregate SHA256: `890b8e2ca7863b891945cc56413627ce317719c4b9a0b8ec2a5c3ef491e285a5`.
 
-Evidence: [verification report](evidence/verification.json), [native runner record](evidence/native-verification-20261114-bilingual.json), [website checks](evidence/website-contract.txt), and [browser checks](evidence/bilingual-local-browser-20261114.json).
+Evidence: [verification report](evidence/verification.json), [native runner record](evidence/native-verification-20261114-bilingual-final.json), [website checks](evidence/website-contract.txt), and [browser checks](evidence/bilingual-local-browser-20261114.json).
 
 ## Execution scope
 

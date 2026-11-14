@@ -1,15 +1,15 @@
 window.ENGINEERING_EVIDENCE = {
-  "generated_at": "2026-11-14T03:37:16.289951+08:00",
+  "generated_at": "2026-11-14T13:43:37.682656+08:00",
   "version": "1.2.0",
-  "source_sha256": "80788488f4dccb1bafbce710bc842684d2be0c9b24c63b199a56580a7748ac37",
+  "source_sha256": "890b8e2ca7863b891945cc56413627ce317719c4b9a0b8ec2a5c3ef491e285a5",
   "python": "3.12.14",
   "checks": [
     {
       "name": "pytest",
       "status": "passed",
-      "detail": "........................................................................ [ 51%]\n.....................................................................    [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  <project>\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n141 passed, 1 warning in 20.95s",
+      "detail": "........................................................................ [ 51%]\n.....................................................................    [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  <project>\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n141 passed, 1 warning in 32.43s",
       "exit_code": 0,
-      "command": "python -m pytest -q --basetemp .tmp\\verify-f4dbemq0\\pytest"
+      "command": "python -m pytest -q --basetemp .tmp\\verify-3c3q_kqx\\pytest"
     },
     {
       "name": "pip-check",
@@ -96,6 +96,6 @@ window.ENGINEERING_EVIDENCE = {
     "ui_sha256": "3dfe21e790469b32d7c9c01ebdbc31ed3109c8d3904bd0ba4242f6679c2d56bc",
     "http_sha256": "5102372598d2e14fd7dd7c82a6eaf265836e1e862f94e8a28f34b3d3d2b4e254",
     "tested_sources_checked_against_current_files": true,
-    "native_runner_record": "docs/evidence/native-verification-20261114-bilingual.json"
+    "native_runner_record": "docs/evidence/native-verification-20261114-bilingual-final.json"
   }
 };

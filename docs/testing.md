@@ -4,11 +4,11 @@
 
 ## 1.2.0 中英文網站驗證
 
-2026-11-14T03:37:16.289951+08:00 的完整驗證為 **141 passed、1 warning、20.95s**；網站結構、語系、路由與資料契約 **46 passed、0 failed**，pip check 通過。來源 manifest 包含 52 檔，網站 manifest 包含 36 檔。總來源指紋為 `80788488f4dccb1bafbce710bc842684d2be0c9b24c63b199a56580a7748ac37`。
+2026-11-14T13:43:37.682656+08:00 的完整驗證為 **141 passed、1 warning、32.43s**；網站結構、語系、路由與資料契約 **46 passed、0 failed**，pip check 通過。來源 manifest 包含 52 檔，網站 manifest 包含 36 檔。總來源指紋為 `890b8e2ca7863b891945cc56413627ce317719c4b9a0b8ec2a5c3ef491e285a5`。
 
 瀏覽器另實際檢查九章英文、來回切換、章節段落保留、58 個術語的搜尋與篩選、合成展示、成果與重現頁，以及 390 × 844 手機版。紀錄見 [雙語網站更新](BILINGUAL_WEBSITE_20261114.md) 與 [瀏覽器結果](evidence/bilingual-local-browser-20261114.json)。
 
-Docker 仍使用 2026-11-13 的獨立實測，12 項 HTTP 與 6 項介面檢查各自保留原日期。匯入前再次確認 20 個 runtime 來源檔案相符；本次沒有啟動 Docker。新的原生驗證另存 [native-verification-20261114-bilingual.json](evidence/native-verification-20261114-bilingual.json)。
+Docker 仍使用 2026-11-13 的獨立實測，12 項 HTTP 與 6 項介面檢查各自保留原日期。匯入前再次確認 20 個 runtime 來源檔案相符；本次沒有啟動 Docker。新的原生驗證另存 [native-verification-20261114-bilingual-final.json](evidence/native-verification-20261114-bilingual-final.json)。
 
 ## 1.1.2 工程驗收（2026-11-13）
 
