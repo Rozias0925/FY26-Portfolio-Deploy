@@ -2,13 +2,13 @@
 
 This project implements a local model-serving and deployment workflow around a synthetic graph-based portfolio simulation. It combines a FastAPI service, a Streamlit dashboard, Docker containers, and an interactive engineering guide. This repository includes the executable synthetic-demo source code; the original Factor GCN research code, trained weights, and financial datasets are not included.
 
-**[Read the interactive project guide](https://rozias0925.github.io/FY26-Portfolio-Deploy/)**
+**[Read the guide in English](https://rozias0925.github.io/FY26-Portfolio-Deploy/?lang=en)** · [繁體中文版](https://rozias0925.github.io/FY26-Portfolio-Deploy/)
 
 ## Project purpose
 
 The project develops the engineering layer around a computational model: input validation, service boundaries, result presentation, container configuration, and reproducible verification. It accompanies my [Factor GCN research project](https://rozias0925.github.io/FY26-Graph-Portfolio/) while using a separate, transparent synthetic pipeline for the implementation.
 
-The guide contains nine chapters and a bilingual technical glossary. Its main text is in Traditional Chinese; this README provides an English overview of the system and its evidence.
+The guide contains nine chapters and 58 technical glossary entries in English and Traditional Chinese. The language control beside Researcher Profile keeps the current chapter when switching languages. Saved screenshots, raw execution logs, and source snapshots retain their original content and dates.
 
 ## Implementation
 
@@ -33,16 +33,16 @@ The static guide runs independently of this Python stack. Its JavaScript illustr
 
 ## Recorded verification
 
-The latest full source verification was recorded on **13 November 2026**, for project version **1.1.2**.
+The latest full source verification was recorded on **14 November 2026**, for project version **1.2.0**.
 
 | Check | Recorded result | Evidence |
 | --- | --- | --- |
 | Python tests | 141 passed; 1 deprecation warning | [Test output](docs/evidence/pytest.txt) |
-| Website structure and assets | 32 passed | [Website checks](docs/evidence/website-contract.txt) |
+| Website structure, assets, and language contracts | 46 passed | [Website checks](docs/evidence/website-contract.txt) |
 | Container HTTP checks | 12 passed | [HTTP record](docs/evidence/docker-http-20261113.json) |
 | Dashboard browser interactions | 6 passed | [UI record](docs/evidence/docker-dashboard-ui-20261113.json) |
 
-Python verification used Windows / CPython 3.12.14; the Docker run used Linux / CPython 3.12.16. Container images were built, then their source hashes and image IDs were checked before reuse in the final runtime verification. The recorded run includes cleanup of its containers and network, followed by Docker Desktop shutdown.
+Python verification used Windows / CPython 3.12.14. The separately recorded Docker run on 13 November used Linux / CPython 3.12.16; its 20 tested runtime source files remain unchanged in this website release. Container images were built, then their source hashes and image IDs were checked before reuse in that runtime verification. The recorded run includes cleanup of its containers and network, followed by Docker Desktop shutdown.
 
 These are dated execution records. [Verification details](docs/testing.md), the [machine-readable report](docs/evidence/verification.json), and the [source manifest](docs/evidence/source-manifest.json) define their scope. The API and synthetic model retain version **1.0.0**, independently of the project version.
 
@@ -126,3 +126,4 @@ The author has not selected an open-source license. Third-party dependencies rem
 - [Technical limitations](docs/LIMITATIONS.md)
 - [Data and research boundaries](docs/DATA_POLICY.md)
 - [Repository snapshot scope](docs/GITHUB_UPLOAD_20261114.md)
+- [Bilingual website release and browser checks](docs/BILINGUAL_WEBSITE_20261114.md)

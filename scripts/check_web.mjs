@@ -38,7 +38,7 @@ check('every glossary chapter reference exists', terms.every(t => t.chapters.len
 const references = [...content.matchAll(/\[\[([^|]+)\|([^\]]+)\]\]/g)].map(match => match[1]);
 check('all inline term references resolve to glossary', references.length > 20 && references.every(id => terms.some(t => t.id === id)));
 
-const assets = [...html.matchAll(/(?:src|href)="([^"]+)"/g)].map(match => match[1]).filter(value => !value.startsWith('#') && !/^https?:/.test(value));
+const assets = [...html.matchAll(/(?:src|href)="([^"]+)"/g)].map(match => match[1]).filter(value => !value.startsWith('#') && !value.startsWith('?') && !/^https?:/.test(value));
 check('all HTML local assets exist within web/', assets.length >= 5 && assets.every(asset => {
   const resolved = path.resolve(web, asset.split(/[?#]/)[0]);
   return resolved.startsWith(web + path.sep) && fs.existsSync(resolved) && fs.statSync(resolved).isFile();
@@ -79,6 +79,49 @@ check('reproduction includes startup, test, shutdown and missing-Docker scope', 
 check('reproduction lists Node.js and distinguishes skipped website verification', ['Node.js','node --version','not_run','退出碼 0'].every(text=>implementation.includes(text)));
 const lawLinks=[...app.matchAll(/href="(https:\/\/law\.moj\.gov\.tw[^\"]+)"/g)].map(match=>match[1].replaceAll('&amp;','&'));
 check('law references use the two official article pages', lawLinks.length===2 && ['4','107'].every(article=>lawLinks.includes(`https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=G0400121&flno=${article}`)));
+
+const englishContent = fs.readFileSync(path.join(web, 'scripts/content.en.js'), 'utf8');
+const englishApp = fs.readFileSync(path.join(web, 'scripts/app.en.js'), 'utf8');
+const englishImplementation = fs.readFileSync(path.join(web, 'scripts/implementation.en.js'), 'utf8');
+const language = fs.readFileSync(path.join(web, 'scripts/language.js'), 'utf8');
+for (const [name, source] of [['content.en.js', englishContent], ['app.en.js', englishApp], ['implementation.en.js', englishImplementation], ['language.js', language]]) {
+  try { new vm.Script(source, {filename:name}); check(`${name}: valid JavaScript`, true); }
+  catch { check(`${name}: valid JavaScript`, false); }
+}
+vm.runInContext(englishContent, context, {timeout:1000, filename:'content.en.js'});
+const englishChapters = context.window.GUIDE_CHAPTERS_EN;
+const englishTerms = context.window.GUIDE_GLOSSARY_EN;
+const hasHan = value => /\p{Script=Han}/u.test(String(value));
+check('English chapters preserve all routes, files and complete translated teaching fields', englishChapters?.length===chapters.length && englishChapters.every((c,i)=>c.id===chapters[i].id && JSON.stringify(c.files)===JSON.stringify(chapters[i].files) && ['title','summary','why','what','how','codeLabel','explanation','built','takeaway'].every(key=>typeof c[key]==='string' && c[key].length>0 && !hasHan(c[key])) && c.mistakes.length===chapters[i].mistakes.length && c.mistakes.every(m=>!hasHan(m))));
+check('English glossary preserves all bilingual term IDs and translates definitions and examples', englishTerms?.length===terms.length && englishTerms.every((t,i)=>t.id===terms[i].id && t.zh===terms[i].zh && JSON.stringify(t.chapters)===JSON.stringify(terms[i].chapters) && t.definition.length>10 && t.example.length>10 && !hasHan(t.definition) && !hasHan(t.example)));
+const englishReferences = [...JSON.stringify(englishChapters).matchAll(/\[\[([^|]+)\|([^\]]+)\]\]/g)].map(m=>m[1]);
+check('English inline glossary links resolve to the shared bilingual term IDs', englishReferences.length>20 && englishReferences.every(id=>englishTerms.some(t=>t.id===id)));
+check('language control appears immediately before Researcher Profile', /class="header-actions">\s*<a class="language-toggle"[^>]*id="language-toggle"[^>]*>[\s\S]*?<\/a>\s*<a class="profile-link"/.test(html));
+const scriptOrder = [...html.matchAll(/<script[^>]+src="([^"?]+)(?:\?[^\"]*)?"/g)].map(m=>m[1]);
+check('locale initialization and both content sets load before their renderers', scriptOrder.indexOf('scripts/language.js')<scriptOrder.indexOf('scripts/app.js') && scriptOrder.indexOf('scripts/content.js')<scriptOrder.indexOf('scripts/content.en.js') && scriptOrder.indexOf('scripts/content.en.js')<scriptOrder.indexOf('scripts/app.en.js') && scriptOrder.indexOf('scripts/implementation.en.js')<scriptOrder.indexOf('scripts/app.en.js'));
+let inactiveRenderersSafe = true;
+for(const [source,lang] of [[app,'en'],[implementation,'en'],[englishApp,'zh'],[englishImplementation,'zh']]) {
+  try { vm.runInNewContext(source,{window:{GUIDE_LANGUAGE:lang}},{timeout:1000}); }
+  catch { inactiveRenderersSafe=false; }
+}
+check('inactive language renderers leave the DOM and event handlers untouched', inactiveRenderersSafe);
+const computation = source => source.slice(source.indexOf('  function syntheticBrowserModel()'),source.indexOf('  function bindPlayground()'));
+check('English and Chinese browser demonstrations use identical computation', computation(app)===computation(englishApp));
+let languageRoutesSafe = true;
+for(const [href,expectedLanguage] of [['https://example.invalid/project/web/index.html?x=1&lang=en#chapter-5/built','en'],['file:///C:/project/web/index.html?lang=zh#glossary/api','zh'],['https://example.invalid/project/?lang=unsupported#reproduce/docker','zh']]) {
+  const nodes=new Map(), events={};
+  const node=key=>{if(!nodes.has(key))nodes.set(key,{textContent:'',firstChild:{textContent:''},setAttribute(name,value){this[name]=value;}});return nodes.get(key);};
+  const fakeWindow={location:{href},addEventListener(name,callback){events[name]=callback;}};
+  const fakeDocument={documentElement:{},getElementById:node,querySelector:node};
+  vm.runInNewContext(language,{window:fakeWindow,document:fakeDocument,URL},{timeout:1000});
+  const before=new URL(href), after=new URL(node('language-toggle').href);
+  languageRoutesSafe &&= fakeWindow.GUIDE_LANGUAGE===expectedLanguage && fakeDocument.documentElement.lang===(expectedLanguage==='en'?'en':'zh-Hant') && after.pathname===before.pathname && after.hash===before.hash && after.searchParams.get('lang')===(expectedLanguage==='en'?'zh':'en') && after.searchParams.get('x')===before.searchParams.get('x');
+  fakeWindow.location.href=href.replace(/#.*/, '#chapter-8/example'); events.hashchange();
+  languageRoutesSafe &&= new URL(node('language-toggle').href).hash==='#chapter-8/example';
+}
+check('language switching preserves routes, anchors and unrelated query parameters without storage', languageRoutesSafe);
+check('English runtime and language control add no network, tracking or persistent data APIs', !/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\s*\(|\b(?:localStorage|sessionStorage|indexedDB|serviceWorker)\b|document\s*\.\s*cookie|navigator\s*\.\s*sendBeacon/i.test(englishApp+englishImplementation+language));
+check('English guide preserves synthetic scope and dated original execution evidence', englishApp.includes('NOT INTEGRATED') && englishApp.includes('python_api_called:false') && englishApp.includes('Educational and Technical Demonstration Only.') && englishImplementation.includes('original interface language') && englishImplementation.includes('2026-11-13'));
 
 console.log(`\nWeb checks: ${passed} passed, ${failures.length} failed. Chapters: ${chapters.length}; glossary: ${terms.length}; inline glossary references: ${references.length}.`);
 console.log('Scope: offline structural/content checks. Browser behavior, layout and true API execution require separate verification.');

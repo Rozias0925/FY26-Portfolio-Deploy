@@ -30,6 +30,20 @@ PASS implementation and reproduction routes are reachable from directory
 PASS reproduction includes startup, test, shutdown and missing-Docker scope
 PASS reproduction lists Node.js and distinguishes skipped website verification
 PASS law references use the two official article pages
+PASS content.en.js: valid JavaScript
+PASS app.en.js: valid JavaScript
+PASS implementation.en.js: valid JavaScript
+PASS language.js: valid JavaScript
+PASS English chapters preserve all routes, files and complete translated teaching fields
+PASS English glossary preserves all bilingual term IDs and translates definitions and examples
+PASS English inline glossary links resolve to the shared bilingual term IDs
+PASS language control appears immediately before Researcher Profile
+PASS locale initialization and both content sets load before their renderers
+PASS inactive language renderers leave the DOM and event handlers untouched
+PASS English and Chinese browser demonstrations use identical computation
+PASS language switching preserves routes, anchors and unrelated query parameters without storage
+PASS English runtime and language control add no network, tracking or persistent data APIs
+PASS English guide preserves synthetic scope and dated original execution evidence
 
-Web checks: 32 passed, 0 failed. Chapters: 9; glossary: 58; inline glossary references: 45.
+Web checks: 46 passed, 0 failed. Chapters: 9; glossary: 58; inline glossary references: 45.
 Scope: offline structural/content checks. Browser behavior, layout and true API execution require separate verification.

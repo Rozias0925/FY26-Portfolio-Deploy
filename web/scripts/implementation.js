@@ -1,5 +1,6 @@
 (() => {
   'use strict';
+  if (window.GUIDE_LANGUAGE === 'en') return;
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const code = text => `<pre class="proof-code"><code>${esc(text)}</code></pre>`;
   function dockerSection(docker) {

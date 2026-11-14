@@ -1,8 +1,16 @@
 # 驗證紀錄：目前版本與歷史快照
 
-更新日期：2026-11-13，Asia/Taipei。來源版本：1.1.2。每筆結果以命令、時間、環境與來源指紋界定範圍；操作方式見 [本機重現指南](LOCAL_REPRODUCTION.md)。
+更新日期：2026-11-14，Asia/Taipei。目前來源版本：1.2.0。每筆結果以命令、時間、環境與來源指紋界定範圍；操作方式見 [本機重現指南](LOCAL_REPRODUCTION.md)。
 
-## 目前驗收
+## 1.2.0 中英文網站驗證
+
+2026-11-14T03:37:16.289951+08:00 的完整驗證為 **141 passed、1 warning、20.95s**；網站結構、語系、路由與資料契約 **46 passed、0 failed**，pip check 通過。來源 manifest 包含 52 檔，網站 manifest 包含 36 檔。總來源指紋為 `80788488f4dccb1bafbce710bc842684d2be0c9b24c63b199a56580a7748ac37`。
+
+瀏覽器另實際檢查九章英文、來回切換、章節段落保留、58 個術語的搜尋與篩選、合成展示、成果與重現頁，以及 390 × 844 手機版。紀錄見 [雙語網站更新](BILINGUAL_WEBSITE_20261114.md) 與 [瀏覽器結果](evidence/bilingual-local-browser-20261114.json)。
+
+Docker 仍使用 2026-11-13 的獨立實測，12 項 HTTP 與 6 項介面檢查各自保留原日期。匯入前再次確認 20 個 runtime 來源檔案相符；本次沒有啟動 Docker。新的原生驗證另存 [native-verification-20261114-bilingual.json](evidence/native-verification-20261114-bilingual.json)。
+
+## 1.1.2 工程驗收（2026-11-13）
 
 **Docker runtime、真實 HTTP 與 Dashboard 操作均已通過，測試服務已收尾。** 原始 Factor GCN 維持 **NOT INTEGRATED**；本輪執行的是新合成資料固定規則模型。
 

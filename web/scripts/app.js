@@ -1,5 +1,6 @@
 (() => {
   'use strict';
+  if (window.GUIDE_LANGUAGE === 'en') return;
   const chapters = window.GUIDE_CHAPTERS;
   const glossary = window.GUIDE_GLOSSARY;
   const main = document.getElementById('main');

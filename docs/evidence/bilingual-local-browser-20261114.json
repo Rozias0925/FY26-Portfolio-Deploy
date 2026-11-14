@@ -1,0 +1,128 @@
+{
+  "checked_at": "2026-11-13T19:36:12.137Z",
+  "language_switch": [
+    {
+      "check": "switch_to_chinese",
+      "hash": "#chapter-5",
+      "heading": "Streamlit 操作介面",
+      "lang": "zh-Hant"
+    },
+    {
+      "check": "switch_back_to_english",
+      "hash": "#chapter-5",
+      "heading": "Streamlit dashboard implementation",
+      "lang": "en"
+    }
+  ],
+  "chapters": [
+    {
+      "hash": "#chapter-1",
+      "heading": "Project background and objectives",
+      "mainHasHan": false,
+      "overflow": false
+    },
+    {
+      "hash": "#chapter-2",
+      "heading": "System architecture and HTTP communication",
+      "mainHasHan": false,
+      "overflow": false
+    },
+    {
+      "hash": "#chapter-3",
+      "heading": "Synthetic data and graph inference pipeline",
+      "mainHasHan": false,
+      "overflow": false
+    },
+    {
+      "hash": "#chapter-4",
+      "heading": "FastAPI contracts and implementation",
+      "mainHasHan": false,
+      "overflow": false
+    },
+    {
+      "hash": "#chapter-5",
+      "heading": "Streamlit dashboard implementation",
+      "mainHasHan": false,
+      "overflow": false
+    },
+    {
+      "hash": "#chapter-6",
+      "heading": "Docker configuration and local deployment",
+      "mainHasHan": false,
+      "overflow": false
+    },
+    {
+      "hash": "#chapter-7",
+      "heading": "Testing strategy and reproducibility",
+      "mainHasHan": false,
+      "overflow": false
+    },
+    {
+      "hash": "#chapter-8",
+      "heading": "Interactive synthetic data demonstration",
+      "mainHasHan": false,
+      "overflow": false
+    },
+    {
+      "hash": "#chapter-9",
+      "heading": "Implementation results and next steps",
+      "mainHasHan": false,
+      "overflow": false
+    }
+  ],
+  "demo": {
+    "scenario": "scenario_b",
+    "risk": "high",
+    "source": "browser_illustration",
+    "python_api_called": false,
+    "original_factor_gcn": "NOT INTEGRATED"
+  },
+  "glossary": {
+    "firstDefinition": "An Application Programming Interface defines agreed operations and input/output formats between programs.",
+    "firstTerm": "API",
+    "secondaryChinese": "應用程式介面",
+    "status": "18 terms found · 58 in total"
+  },
+  "mobile_home": {
+    "heading": "Graph-Based Portfolio\nAPI & Deployment System",
+    "lang": "en",
+    "metricsColumns": "140.667px 140.667px",
+    "overflow": false,
+    "switchLeftOfProfile": true,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "mobile_glossary": {
+    "overflow": false,
+    "terms": 58,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "implementation": {
+    "heading": "Local implementation",
+    "headings": [
+      "Recorded interaction screens",
+      "Synthetic request and complete response",
+      "Source files and implementation",
+      "Docker runtime verification"
+    ],
+    "mainHasHan": false,
+    "overflow": false
+  },
+  "reproduction": {
+    "heading": "Reproduce locally",
+    "mainHasHan": false,
+    "overflow": false,
+    "sections": 5
+  },
+  "chapter_anchor": {
+    "hash": "#chapter-5/built",
+    "heading": "Streamlit 操作介面",
+    "language": "zh-Hant"
+  },
+  "screenshot": "bilingual-mobile-20261114.jpg"
+}

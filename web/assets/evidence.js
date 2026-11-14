@@ -1,15 +1,15 @@
 window.ENGINEERING_EVIDENCE = {
-  "generated_at": "2026-11-13T21:39:50.395017+08:00",
-  "version": "1.1.2",
-  "source_sha256": "f31243cec641ac9c951582c26047701a25e2f4f3d05488f092325cfd999c4fb7",
+  "generated_at": "2026-11-14T03:37:16.289951+08:00",
+  "version": "1.2.0",
+  "source_sha256": "80788488f4dccb1bafbce710bc842684d2be0c9b24c63b199a56580a7748ac37",
   "python": "3.12.14",
   "checks": [
     {
       "name": "pytest",
       "status": "passed",
-      "detail": "........................................................................ [ 51%]\n.....................................................................    [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  <project>\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n141 passed, 1 warning in 21.53s",
+      "detail": "........................................................................ [ 51%]\n.....................................................................    [100%]\n============================== warnings summary ===============================\n.venv\\Lib\\site-packages\\fastapi\\testclient.py:1\n  <project>\\.venv\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n141 passed, 1 warning in 20.95s",
       "exit_code": 0,
-      "command": "python -m pytest -q --basetemp .tmp\\verify-7b_iia_9\\pytest"
+      "command": "python -m pytest -q --basetemp .tmp\\verify-f4dbemq0\\pytest"
     },
     {
       "name": "pip-check",
@@ -19,11 +19,25 @@ window.ENGINEERING_EVIDENCE = {
       "command": "python -m pip check"
     },
     {
+      "name": "javascript-app.en",
+      "status": "passed",
+      "detail": "",
+      "exit_code": 0,
+      "command": "node --check web\\scripts\\app.en.js"
+    },
+    {
       "name": "javascript-app",
       "status": "passed",
       "detail": "",
       "exit_code": 0,
       "command": "node --check web\\scripts\\app.js"
+    },
+    {
+      "name": "javascript-content.en",
+      "status": "passed",
+      "detail": "",
+      "exit_code": 0,
+      "command": "node --check web\\scripts\\content.en.js"
     },
     {
       "name": "javascript-content",
@@ -33,6 +47,13 @@ window.ENGINEERING_EVIDENCE = {
       "command": "node --check web\\scripts\\content.js"
     },
     {
+      "name": "javascript-implementation.en",
+      "status": "passed",
+      "detail": "",
+      "exit_code": 0,
+      "command": "node --check web\\scripts\\implementation.en.js"
+    },
+    {
       "name": "javascript-implementation",
       "status": "passed",
       "detail": "",
@@ -40,9 +61,16 @@ window.ENGINEERING_EVIDENCE = {
       "command": "node --check web\\scripts\\implementation.js"
     },
     {
+      "name": "javascript-language",
+      "status": "passed",
+      "detail": "",
+      "exit_code": 0,
+      "command": "node --check web\\scripts\\language.js"
+    },
+    {
       "name": "website-contract",
       "status": "passed",
-      "detail": "user research and profile websites are externally linked\nPASS no browser network data APIs\nPASS no browser persistence, tracking or cookie APIs\nPASS no remote navigation or dynamic script injection in app\nPASS accessible shell: language, skip link, landmarks and compact navigation\nPASS homepage includes exact bilingual educational notices\nPASS playground explicitly distinguishes browser illustration from API\nPASS playground offers three scenarios and keyboard-operable JSON tabs\nPASS responsive and reduced-motion styles exist\nPASS static evidence marks pending records and dates execution snapshots\nPASS saved Python request/response match real HTTP record\nPASS saved proof preserves synthetic scope and API identity\nPASS selected source snapshots match the current source hashes\nPASS static screenshots and complete JSON files exist\nPASS published Docker receipt matches independently saved execution and scope\nPASS Docker gallery preserves original screenshots and excludes private runtime logs\nPASS implementation and reproduction routes are reachable from directory\nPASS reproduction includes startup, test, shutdown and missing-Docker scope\nPASS reproduction lists Node.js and distinguishes skipped website verification\nPASS law references use the two official article pages\n\nWeb checks: 32 passed, 0 failed. Chapters: 9; glossary: 58; inline glossary references: 45.\nScope: offline structural/content checks. Browser behavior, layout and true API execution require separate verification.",
+      "detail": "cludes private runtime logs\nPASS implementation and reproduction routes are reachable from directory\nPASS reproduction includes startup, test, shutdown and missing-Docker scope\nPASS reproduction lists Node.js and distinguishes skipped website verification\nPASS law references use the two official article pages\nPASS content.en.js: valid JavaScript\nPASS app.en.js: valid JavaScript\nPASS implementation.en.js: valid JavaScript\nPASS language.js: valid JavaScript\nPASS English chapters preserve all routes, files and complete translated teaching fields\nPASS English glossary preserves all bilingual term IDs and translates definitions and examples\nPASS English inline glossary links resolve to the shared bilingual term IDs\nPASS language control appears immediately before Researcher Profile\nPASS locale initialization and both content sets load before their renderers\nPASS inactive language renderers leave the DOM and event handlers untouched\nPASS English and Chinese browser demonstrations use identical computation\nPASS language switching preserves routes, anchors and unrelated query parameters without storage\nPASS English runtime and language control add no network, tracking or persistent data APIs\nPASS English guide preserves synthetic scope and dated original execution evidence\n\nWeb checks: 46 passed, 0 failed. Chapters: 9; glossary: 58; inline glossary references: 45.\nScope: offline structural/content checks. Browser behavior, layout and true API execution require separate verification.",
       "exit_code": 0,
       "command": "node scripts/check_web.mjs"
     },
@@ -61,13 +89,13 @@ window.ENGINEERING_EVIDENCE = {
   "limitations": [
     "Synthetic graph demonstration; original Factor GCN NOT INTEGRATED.",
     "Docker verification was executed separately; its tested runtime sources were checked before attaching this result.",
-    "No public deployment or repository created."
+    "This verification runs local checks; public website publication is recorded separately."
   ],
   "docker_result_source": {
     "runtime_sha256": "f663547184b6163cc5e73de69efaf301c741f0135c4a0c172b858c5719958f04",
     "ui_sha256": "3dfe21e790469b32d7c9c01ebdbc31ed3109c8d3904bd0ba4242f6679c2d56bc",
     "http_sha256": "5102372598d2e14fd7dd7c82a6eaf265836e1e862f94e8a28f34b3d3d2b4e254",
     "tested_sources_checked_against_current_files": true,
-    "native_runner_record": "docs/evidence/native-verification-20261113-site-refresh.json"
+    "native_runner_record": "docs/evidence/native-verification-20261114-bilingual.json"
   }
 };

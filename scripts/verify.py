@@ -66,7 +66,7 @@ def main():
             check["detail"] += " (dependency consistency; not a CVE audit)"
     docker = shutil.which("docker")
     checks.append({"name": "Docker Compose runtime", "status": "not_run",
-                   "detail": "Docker CLI not installed; static policy checks only." if not docker
+                   "detail": "Docker CLI unavailable in this verification environment; runtime checks run separately." if not docker
                    else "Run scripts/verify_docker.ps1 separately; not covered by this command."})
     distributions = sorted(importlib.metadata.distributions(), key=lambda d: d.metadata["Name"].lower())
     versions = {d.metadata["Name"]: d.version for d in distributions}
@@ -96,7 +96,7 @@ def main():
                 "python": sys.version.split()[0], "checks": checks,
                 "limitations": ["Synthetic graph demonstration; original Factor GCN NOT INTEGRATED.",
                                 "Docker runtime not verified by this script.",
-                                "No public deployment or repository created."]}
+                                "This verification command runs local checks and does not publish a website or repository."]}
     (OUTPUT / "source-manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     (OUTPUT / "verification.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=2), encoding="utf-8")
     assets = ROOT / "web" / "assets"

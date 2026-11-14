@@ -28,6 +28,10 @@ svg{display:block;max-width:100%;height:auto} img{max-width:100%} code,pre{font-
 .brand-logo{display:block;width:40px;height:40px;object-fit:contain;flex:0 0 40px}
 
 .header-actions{display:flex;align-items:center;gap:25px}.profile-link{font-size:13px;font-weight:600;white-space:nowrap;color:var(--body)}.profile-link:hover{color:var(--link)}
+.header-actions{gap:16px}
+.language-toggle{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:40px;padding:5px 11px;border:1px solid var(--directory-line);border-radius:6px;background:var(--palette-sky);font-size:12px;font-weight:650;line-height:1.5;white-space:nowrap}
+.language-toggle:hover{background:var(--palette-peach);border-color:var(--palette-orange)}
+@media(max-width:700px){.header-actions{gap:10px}.language-toggle{min-width:40px;padding:5px 9px}.profile-link{font-size:12px}}
 
 
 

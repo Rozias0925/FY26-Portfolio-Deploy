@@ -1,6 +1,6 @@
 {
   ".nojekyll": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-  "assets/evidence.js": "2753ac19a546bf30311f61eba9c017d207ceae1770b19ae737488f6c19f2a17a",
+  "assets/evidence.js": "30ae37f7aeea010e02a011431cb5637d92279629b6f1178e16d392398677925d",
   "assets/implementation/api-explorer.jpg": "59beeed089ebe503d7eb657f5ef6a7f484e069b9ae6e1f611a9ab29f4175570e",
   "assets/implementation/backend__app__main.py.txt": "323412caad162d5e35c70724c041d75cab50ee6829d3f37cb48730339816b28c",
   "assets/implementation/backend__app__routes.py.txt": "b84056e54698ea19f813d1aa9c3b9207c6060fe364ecce6e5e6b60b9395f78af",
@@ -26,9 +26,13 @@
   "assets/implementation.js": "51d2dd63f1dcb0a6fcf0a121bb47bee9770ecdc6fdfad2a8769463dbeb17cc33",
   "assets/mark.svg": "66ca405418869a17af21618ef0991f841d24804b9a548b13f3ca938bc37816de",
   "assets/rozias-logo.png": "a04f6dfac0768634d1d128208fdda5ae2c9e18c2957ba1af922156ed30d3927b",
-  "index.html": "e86e803e71a05e658a9aa1d5abf1c36bcf8ad600549bc48fc101ff24de5cef6c",
-  "scripts/app.js": "96973c3d752dfb8ff66e74973307385184eee522439fa75448be7f2006b37caa",
+  "index.html": "0100db710674ff02afafeca909cbd915787ef02d63ac45d8cdc85a06f7eda467",
+  "scripts/app.en.js": "a6dfd1b45d50dc89d17455a4dd9a3916637a7d0fbd44279e8e4d23d821b5ca0c",
+  "scripts/app.js": "2e7d48b66e30a11636bb40f72286b951e6f3167ba07b65cf54c1b5bd04f7b339",
+  "scripts/content.en.js": "32c4c12340b2ecf9b81acc276560acb81afb85962a4f7dab363a8e9b7b561c2c",
   "scripts/content.js": "57cafc169bf15bed38326c693eae07eb9e8c7c45cbc5144384afb950bdf47e85",
-  "scripts/implementation.js": "d95e2757e9149416ce5f1cb0345691eb1e2d8b479fe56f4c31ee18d56d106167",
-  "styles/site.css": "c02ca3a471db261bb1eca40fead1eeac96953fedb2cde34d21665d521a8c7f94"
+  "scripts/implementation.en.js": "c21f25e6638bbef2cfeb7bb3f55041dea87579d6a59a65e51c556941341150b4",
+  "scripts/implementation.js": "8fd9fae080190af9750e4013cbcc2900a7a3375d3bb8020ce91c3b93c3c198ff",
+  "scripts/language.js": "f0e7b187a37fc443b497f02ba4ec3c6b1c4c53ccdff3dc018115e9a2c60dd619",
+  "styles/site.css": "64a79535afd69e870954edbdc24021ee3b591fee0ee7f303136e268f00ce0c9e"
 }
